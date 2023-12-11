@@ -11,15 +11,17 @@ class service extends Component
     public $heading;
     public $description;
     public $image;
+    // public $projectimages;
     // public $description;
     /**
      * Create a new component instance.
      */
     public function __construct($heading, $description, $image)
     {
-        $this->h2 = $heading;
-        $this->p = $description;
-        $this->p = $image;
+        $this->heading = $heading;
+        $this->description = $description;
+        $this->image = $image;
+        // $this->img = $projectimages;
     }
 
     /**
