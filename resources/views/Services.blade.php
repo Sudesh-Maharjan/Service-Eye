@@ -25,7 +25,7 @@
 
    <!-- our products -->
    <div class="flex justify-center flex-col">
-      <p class="text-xl m-5 ">Service Eye processes are built for speed of iteration and innovation. We use world-class
+      <p class="text-xl m-5 font-bold">Service Eye processes are built for speed of iteration and innovation. We use world-class
          product engineering to transform businesses.</p>
    </div>
    <div class=" grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 mdl:grid-cols-2 lg:grid-cols-3 gap-16">
@@ -58,7 +58,7 @@
          image="{{ URL('images/consulting.png') }}" />
    </div>
    <!-- Our products end -->
-   
+   <x-subscribe/>
 </body>
 
 </html>

@@ -6,19 +6,14 @@ use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-class service extends Component
+class subscribe extends Component
 {
-    public $heading;
-    public $description;
-    public $image;
     /**
      * Create a new component instance.
      */
-    public function __construct($heading, $description, $image)
+    public function __construct()
     {
-        $this->heading = $heading;
-        $this->description = $description;
-        $this->image = $image;
+        //
     }
 
     /**
@@ -26,6 +21,6 @@ class service extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.service');
+        return view('components.subscribe');
     }
 }
