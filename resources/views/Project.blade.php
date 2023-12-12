@@ -9,7 +9,7 @@
 <body>
 
 <div class="container mx-auto">
-
+<x-header/>
 <header class="p-8 ">
             <h2 class="title text-3xl font-bold text-blue-800 text-center mb-4">Our Projects</h2>
             <p class="description text-center text-gray-700 mb-8">Software development outsourcing is just a tool to

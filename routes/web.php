@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Services');
-});
+Route::get('/services',  [ServicesController::class, 'showservices'])->name('services');
 Route::get('/project', function () {
     return view('Project');
+});
+Route::get('/training', function () {
+    return view('Training');
 });

@@ -7,7 +7,8 @@
    @vite('resources/css/app.css')
 </head>
 
-<body class="m-7 flex items-center flex-col">
+<body class=" flex items-center flex-col">
+   <x-header/>
    <!-- service banner start -->
    <div class="grid  xs:grid-cols-1 lg:grid-cols-2 items-center w-auto ">
       <div class="w-[500px] flex justify-center items-center flex-col ml-28">
@@ -24,7 +25,7 @@
    <!-- servive banner end -->
 
    <!-- our products -->
-   <div class="flex justify-center flex-col">
+   <div class="flex justify-center flex-col m-5">
       <p class="text-xl m-5 font-bold">Service Eye processes are built for speed of iteration and innovation. We use world-class
          product engineering to transform businesses.</p>
    </div>
