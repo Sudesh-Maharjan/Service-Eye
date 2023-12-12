@@ -10,7 +10,7 @@
 
 
 <div class="flex items-center justify-between p-4 w-full h-[110px]  sticky top-0 bg-white shadow-md z-20">
-    <a class="navbar-brand" href="#"><img src="{{url('images/header.png')}}" class="h-[110px] p-2" alt=""></a>
+    <a class="navbar-brand" href="{{url('/services')}}"><img src="{{url('images/header.png')}}" class="h-[110px] p-2" alt=""></a>
 
     <div class="flex justify-center items-center m-5 lg:hidden">
         <!-- Button to toggle the navbar on small screens -->
@@ -69,7 +69,7 @@
             <a href="#" class="font-bold text-black hover:text-gray-700">Training</a>
         </li>
         <li>
-            <a href="#" class="font-bold text-white bg-blue-800 rounded px-4 py-2 hover:bg-blue-700">Enroll With Us</a>
+            <a href="#" class="text-decoration-none font-bold text-white bg-themecolor rounded px-4 py-2 hover:bg-opacity-80">Enroll With Us</a>
         </li>
     </ul>
 </div>

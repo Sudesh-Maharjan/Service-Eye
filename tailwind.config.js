@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        themecolor: '#324465',
+      },
       rotate: {
         '360': '360deg',
       },
