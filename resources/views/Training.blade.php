@@ -5,11 +5,14 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Training</title>
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+   <link rel="stylesheet" href="{{ asset('css/trainingcard.css') }}">
+
 </head>
 <body>
    <x-header />
    <x-trainingbanner />
-   <div class="mx-auto -mt-20">
+   <div class="mx-auto -mt-28">
       <h1 class="text-black">Syllabus</h1>
       <div class="flex flex-wrap justify-center gap-16 mt-10">
          @for ($i = 0; $i
@@ -36,7 +39,30 @@
       </div>
    </div>
 
-   <x-accordion/>
+   <div class="">
+      <x-description titleone="Description" titletwo="Full Stack Product Engineer Using MERN"  titlethree="How the course is designed?" titlefour="Advantage of studying MERN"
+      descriptionone="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN MongoDB, Express.js, React, Node.js, Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape. Whether you're a beginner or looking to upskill, join us on this transformative learning experience and unlock a future filled with endless possibilities in the world of software development and design." descriptiontwo="
+In MERN you will learn MongoDB which is classified as NOSQL document-oriented database. Data in MongoDB is stored in JSON based query language. It is flexible and easy to scale. Another component you will learn is Express popularly known as backend web application framework. The express framework is being used to develop robust web applications. Another component of MERN course is react which is JavaScript library popular to build user interface and interactivity on the client side. Some of the popular web applications like Facebook extensively uses react in the frontend for interactivity. React was first introduced by a developer in Facebook. React is an alternate to Angular JS a frontend application development framework which differentiates MERN from MEAN course. Node.js is a cross platform JavaScript runtime environment used to build scalable network applications." descriptionthree="
+In this full stack developer course, MERN developer will use JavaScript on both the frontend and backend hence there is no need to learn a new programming language. Moreover, JavaScript is a loosely type language and easy to learn. A person having a knowledge of C programming can easily master JavaScript since the syntax of both the language is similar. Hence, a person having knowledge of C can easily excel JavaScript. There is a great scope of MERN stack developer in software companies these days. MERN stack developers are highly efficient for developing robust web applications across the web.
+Prerequisite
+If you want to study MERN stack developer course then you need to have a basic understanding of web along with HTML and CSS. However, it is necessary to have a good understanding of Object Oriented Programming. If you are an existing backend application developer and want to switch to MERN then it will be very easy for you to understand the course."/>
+   </div>
+<div class="flex flex-col items-center m-20">
+   <x-accordion titleaccordion="HTML Fundamentals"/>
+   <x-accordion titleaccordion="Css Fundamentals"/>
+   <x-accordion titleaccordion="JavaScript Fundamentals"/>
+   </div>
+<x-heading heading="Similar Programs For You"/>
+   <div class="container p-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Include your Tailwind CSS components here -->
+        <x-trainingcardraj coursename="Python" coursedescription="Full stack python course" months="3"  image="{{ asset('images/bloginisde-image.png') }}"/>
+        <x-trainingcardraj coursename="Mern" coursedescription="Full stack mern course" months="2"  image="{{ asset('images/bloginisde-image.png') }}"/>
+        <x-trainingcardraj coursename="Python" coursedescription="Full stack python course" months="5"  image="{{ asset('images/bloginisde-image.png') }}"/>
+      </div>
+    </div>
+
+    </div>
    <x-footer/>
 </body>
 </html>

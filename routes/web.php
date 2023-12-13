@@ -21,3 +21,14 @@ Route::get('/project', function () {
 Route::get('/training', function () {
     return view('Training');
 });
+Route::get('/bloginside', function () {
+    return view('bloginside');
+});
+Route::get('/trainingcard', function () {
+    return view('trainingcardraj');
+});
+Route::get('/blog', function () {
+    return view('banner');
+});
+
+

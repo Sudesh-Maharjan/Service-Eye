@@ -1,7 +1,7 @@
-    <main class="relative min-h-screen flex flex-col justify-start items-start overflow-hidden ">
-        <div class=" max-w-2xl mx-auto px-4 md:px-6 py-10">
+    <main class=" flex flex-col overflow-hidden">
+        <div class=" max-w-2xl px-4 md:px-6 ">
             <!-- Accordion component -->
-            <div class="divide-y divide-slate-200">
+            <div class="divide-y divide-slate-200 ">
                 <!-- Accordion item -->
                 <div x-data="{ expanded: false }" class="py-2">
                     <h2>
@@ -13,7 +13,7 @@
                             :aria-expanded="expanded"
                             aria-controls="faqs-text-01"
                         >
-                            <span>What are the advantages of your service?</span>
+                            <span class="">{{$titleaccordion}}</span>
                             <svg class="fill-white shrink-0 ml-8" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                                 <rect y="7" width="16" height="2" rx="1" class="transform origin-center transition duration-200 ease-out " :class="{'!rotate-180': expanded}" />
                                 <rect y="7" width="16" height="2" rx="1" class="transform origin-center rotate-90 transition duration-200 ease-out " :class="{'!rotate-180': expanded}" />
@@ -28,7 +28,7 @@
                         :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
                         >
                         <div class="overflow-hidden ">
-                            <p class="pb-3">
+                            <p class="p-3 font-bold">
                                 If you go over your organisations or user limit, a member of the team will reach out about bespoke pricing. In the meantime, our collaborative features won't appear in accounts or users that are over the 100-account or 1,000-user limit.
                             </p>
                         </div>

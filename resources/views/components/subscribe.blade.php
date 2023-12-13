@@ -26,6 +26,6 @@
       <input type="text" class="h-[60px] w-[600px] border-2 p-3"> <button
          class="bg-blue-950 h-[60px] text-white p-3 z-10">Subscribe Now</button>
    </div>
-      <img src="{{URL('images/pngwing 1.png')}}" alt="" class=" w-[350px] absolute left-[790px] -top-14 rotating-image">
+      <img src="{{URL('images/pngwing 1.png')}}" alt="" class="rounded-full w-[300px] absolute left-[790px] -top-9 rotating-image">
       </div>
 </div>

@@ -41,6 +41,9 @@
             <li>
                 <a href="{{url('/training')}}" class="font-bold text-black hover:text-gray-700 nav-link">Training</a>
             </li>
+            <li>
+                <a href="{{url('/blog')}}" class="font-bold text-black hover:text-gray-700 nav-link">Blog</a>
+            </li>
         </ul>
     </div>
 
@@ -68,6 +71,7 @@
         <li>
             <a href="#" class="font-bold text-black hover:text-gray-700">Training</a>
         </li>
+        
         <li>
             <a href="#" class="text-decoration-none font-bold text-white bg-themecolor rounded px-4 py-2 hover:bg-opacity-80">Enroll With Us</a>
         </li>

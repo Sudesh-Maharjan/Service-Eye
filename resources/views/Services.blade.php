@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
    <title>Services</title>
@@ -11,8 +10,8 @@
    <x-header/>
    <!-- service banner start -->
    <div class="grid  xs:grid-cols-1 lg:grid-cols-2 items-center w-auto ">
-      <div class="w-[500px] flex justify-center items-center flex-col ml-28">
-         <h1 class="text-5xl m-2 font-bold">IT Consulting Services <br>
+      <div class="w-[600px] flex justify-center flex-col ml-20">
+         <h1 class="text-5xl text-left m-2 font-bold">IT Consulting Services <br>
             For Your </h1>
          <p class=" mt-5 m-2 font-bold">We are leading technology solutions providing company all over the world doing
             over a years</p>
@@ -20,7 +19,7 @@
             decentralized, open-source solutions that are fast, reliable and accessible to everyone. Experience the
             power of Web3 applications with us.</p>
       </div>
-      <div class=""><img src="{{URL('images/service_banner.png')}}" alt="" class="h-[600px] w-[2000px]"></div>
+      <div class=""><img src="{{URL('images/service_banner.png')}}" alt="" class="h-[600px] w-[1900px] mr-4"></div>
    </div>
    <!-- servive banner end -->
 
