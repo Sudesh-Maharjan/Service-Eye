@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: Roboto;
+
+}
+.training-card-title{
+    font-family: Roboto;
+font-size: 24px;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: 0em;
+text-align: justified;
+color: #324465;
+
+
+}
+.training-card-text{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 500;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: justified;
+
+}
+.image-border{
+    overflow: hidden;
+}
+.training-card-image{
+    transition: all 1s;
+}
+.training-card:hover .training-card-image{
+    transform: scale(1.3);
+}
+.training-card:hover .training-card-title{
+    color:#324465;
+}
+.training-card:hover{
+    box-shadow: 1px 1px 5px gray;
+    cursor:grab;
+   
+}
+.truncate-two-lines {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  .training-card{
+    background-color:  #32446512;
+    ;
+  }
+  .training-card-image{
+    height: 250px;
+  }
