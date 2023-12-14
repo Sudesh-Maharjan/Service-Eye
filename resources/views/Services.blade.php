@@ -59,6 +59,7 @@
    </div>
    <!-- Our products end -->
    <x-subscribe/>
+   <x-footer/>
 </body>
 
 </html>
