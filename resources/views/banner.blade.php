@@ -30,9 +30,13 @@
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <!-- Use the 'x-blogcards' component as before -->
-            <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogcard.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
-            <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogcard.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
-            <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/bloginisde-image.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
+            @foreach($blogs as $blog)
+            <a href="{{route('blog.insideblog',$blog->id)}}"> <x-blogcards blogtitle="{{$blog->title}}" id="{{$blog->id}}" update="{{$blog->updated_at}}" image="{{asset('uploads')}}/{{$blog->image}}" blogdescription="{{$blog->description}}"/></a>
+           
+
+            @endforeach
+     
+           
         </div>
         
     </div>
