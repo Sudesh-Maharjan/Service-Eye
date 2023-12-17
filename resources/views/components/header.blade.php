@@ -27,7 +27,7 @@
         <!-- Navbar links for larger screens -->
         <ul class="list-reset flex justify-end items-center space-x-5 ">
             <li>
-                <a href="#" class="font-bold text-black hover:text-gray-700 nav-link">Home</a>
+                <a href="{{route('Homepage')}}" class="font-bold text-black hover:text-gray-700 nav-link">Home</a>
             </li>
             <li>
                 <a href="#" class="font-bold text-black hover:text-gray-700 nav-link">About Us</a>

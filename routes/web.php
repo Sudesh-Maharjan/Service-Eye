@@ -30,5 +30,9 @@ Route::get('/trainingcard', function () {
 Route::get('/blog', function () {
     return view('banner');
 });
+Route::get('/', function () {
+    return view('Homepage');
+})->name('Homepage') ;
+
 
 

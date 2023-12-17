@@ -1,0 +1,31 @@
+/* .core {
+   color: var(--background-color-navy-b-lue, #324465);
+   text-align: center;
+   font-family: Roboto;
+   font-size: 32px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 29px;
+}
+
+section {
+   text-align: center;
+}
+
+.image-box {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   margin-top: 20px;
+}
+
+.image-box img {
+   max-width: 30%;
+   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+   .image-box img {
+       max-width: 45%;
+   }
+} */
