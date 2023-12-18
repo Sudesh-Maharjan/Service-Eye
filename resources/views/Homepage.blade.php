@@ -13,18 +13,20 @@
 
 <body>
     <x-header />
-    <x-homebanner class="" />
+    <x-homebanner />
+
     <div class="grid xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5" data-aos="fade-right"
         data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
         <x-happyusers title="User" emoji="<i class='fa-regular fa-face-smile '></i>" numbers="80"
-            class="animated-number" data-target="80" />
+            class="animated-number-User" data-target="80" />
         <x-happyusers title="Projects" emoji="<i class='fa-solid fa-bullseye'></i>" numbers="150"
-            class="animated-number" data-target="150" />
+            class="animated-number-Projects" data-target="80" />
         <x-happyusers title="Services" emoji="<i class='fa-solid fa-hand-holding-heart'></i>" numbers="200"
-            class="animated-number" data-target="200" />
+            class="animated-number-Services" data-target="200" />
         <x-happyusers title="Connection" emoji="<i class='fa-solid fa-database'></i>" numbers="500"
-            class="animated-number" data-target="500" />
+            class="animated-number-Connection" data-target="500" />
     </div>
+
     <div class="flex flex-col md:flex-row justify-center mt-14">
         <div class="p-2 m-2 flex justify-center" data-aos="fade-right" data-aos-duration="1500">
             <div class="xs:[200px] w-[475px] p-3 m-2 ">

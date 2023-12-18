@@ -10,12 +10,13 @@
     <x-header />
     <div class=" p-10 ">
         <div class="title">
-            <div class="ContactUs text-sky-950 text-4xl font-bold leading-7 m-2 md:m-10 text-center">Contact Us</div>
-            <div class="text-center text-slate-700 text-base font-bold leading-7 mb-2 md:mb-10">
+        <x-heading heading="Contact Us" />
+
+            <div class="text-center text-slate-700 font-bold leading-7 mb-2 md:mb-10 text-xl">
                 Get in touch with us. We’re ready to help you <br /> find the best solutions</div>
         </div>
-        <div class="flex flex-col md:flex-row gap-4 justify-center items-center ">
-            <div class="w-full md:w-2/5 lg:w-2/6 bg-sky-950 bg-opacity-75 rounded py-6">
+        <div class="flex flex-col md:flex-row gap-20 justify-center items-center ">
+            <div class="w-full md:w-2/5 lg:w-2/6 bg-sky-950 bg-opacity-75 rounded py-8">
                 <form class="max-w-sm mx-auto" action=" {{route('postcontactus')}}">
                     @csrf
                     @if(Session::has('message'))
@@ -52,8 +53,8 @@
                         Message</button>
                 </form>
             </div>
-            <div class="w-full md:w-3/5 lg:w-2/6 h-96">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8049843454905!2d85.3329713755604!3d27.692421676191053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19d6b8d98047%3A0xfe0592f8cbca59d0!2sService%20Eye%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1695184491044!5m2!1sen!2snp" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <div class="w-full md:w-3/5 lg:w-2/6 h-[630px]">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8049843454905!2d85.3329713755604!3d27.692421676191053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19d6b8d98047%3A0xfe0592f8cbca59d0!2sService%20Eye%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1695184491044!5m2!1sen!2snp" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
             </div>
         </div>
         <div class=" flex flex-col md:flex-row justify-between items-center mt-6 md:mt-10 bg-slate-700 bg-opacity-95 rounded-3xl px-4 md:px-28 py-4 md:h-80  ">

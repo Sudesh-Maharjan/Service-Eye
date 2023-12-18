@@ -6,21 +6,21 @@
     {!! $emoji !!}
     </div>
             <div class="so font-bold text-navy-blue text-xl m-2">{{$title}}</div>
-            <div id="animated-number" class="text-3xl font-bold"  data-target="{{$numbers}}"></div>
+            <div id="animated-number-{{$title}}" class="text-3xl font-bold"  data-target="{{$numbers}}"></div>
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        animateNumber("animated-number");
+        animateNumber("animated-number-{{$title}}");
     });
 
     function animateNumber(elementId) {
         const obj = document.getElementById(elementId);
         const start = 0;
         const end = parseInt(obj.getAttribute('data-target'));
-        const duration = 2000; // Adjust the duration as needed
-        const interval = 20; // Adjust the interval as needed
+        const duration = 2000;
+        const interval = 20;
         const step = (end - start) / (duration / interval);
 
         let currentNumber = start;
