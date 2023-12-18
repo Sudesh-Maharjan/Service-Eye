@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 *{
    font-family: 'Roboto', sans-serif;
+   /* scroll-behavior: smooth; */
 }
+
+
+
+.formInput {
+   @apply border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+.formLable {
+   @apply block mb-2 text-base font-semibold text-white dark:text-white
+}
+.delete{
+   @apply bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 transition duration-300
+ }

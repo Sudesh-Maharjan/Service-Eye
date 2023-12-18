@@ -1,4 +1,6 @@
-<div class="group relative flex w-[350px] ">
+<div class="group relative flex w-[350px] " data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
     <div class="flex justify-center  items-center mt-4 shadow-xl rounded-3xl overflow-hidden w-auto">
         <img src="{{$image}}" alt="image" class="w-[350px] transition-transform transform scale-100= group-hover:scale-105 hover:cursor-pointer">
     </div>

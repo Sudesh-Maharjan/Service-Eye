@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <title>Your Laravel Project</title>
 </head>
-<body>
+<body> -->
     <footer class="relative w-full mt-4 bg-themecolor">
         <div class="box py-12 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="sec aboutus">
@@ -114,5 +114,5 @@
             }
         });
     </script>
-</body>
-</html>
+<!-- </body>
+</html> -->

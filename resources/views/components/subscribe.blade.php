@@ -14,7 +14,7 @@
     }
 </style>
 
-<div class="h-52 w-auto bg-white m-10 flex justify-center items-center flex-row relative">
+<div class="h-52 w-auto bg-white m-10 flex justify-center items-center flex-row relative"  data-aos="zoom-in-up" data-aos-duration="1500">
    <div class="">
       <img src="{{URL('images/Vector.png')}}" alt="Arrow" class="m-5">
    </div>

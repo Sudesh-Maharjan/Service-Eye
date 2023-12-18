@@ -4,6 +4,8 @@
    @vite('resources/css/app.css')
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
    <title>Training</title>
    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
    <link rel="stylesheet" href="{{ asset('css/trainingcard.css') }}">
@@ -14,9 +16,9 @@
    <x-trainingbanner />
    <div class="mx-auto -mt-28">
       <h1 class="text-black">Syllabus</h1>
-      <div class="flex flex-wrap justify-center gap-16 mt-10">
+      <div class="flex flex-wrap justify-center gap-16 mt-10" data-aos="flip-up" data-aos-duration="1500">
          @for ($i = 0; $i
-         < 3; $i++) <x-traininginfocard title="Batch Start Date" date="Jan. 24 2023" />
+         < 3; $i++) <x-traininginfocard title="Batch Start Date" date="Jan. 24 2023" data-aos-duration="4000" />
          @endfor
       </div>
    </div>
@@ -29,7 +31,7 @@
             <span class="why-join-this-programs-span2 ">?</span>
          </span>
       </div>
-      <div class="flex flex-wrap justify-center gap-16 mt-10">
+      <div class="flex flex-wrap justify-center gap-16 mt-10" data-aos="zoom-out-down" data-aos-duration="1500">
          <x-trainingcard w1="Real" 
          w2="World" 
          desc="Get insights on how ai is across companies like E-sewa ,Daraz, Khalti... more"
@@ -39,7 +41,9 @@
       </div>
    </div>
 
-   <div class="">
+   <div class=""data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
       <x-description titleone="Description" titletwo="Full Stack Product Engineer Using MERN"  titlethree="How the course is designed?" titlefour="Advantage of studying MERN"
       descriptionone="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN MongoDB, Express.js, React, Node.js, Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape. Whether you're a beginner or looking to upskill, join us on this transformative learning experience and unlock a future filled with endless possibilities in the world of software development and design." descriptiontwo="
 In MERN you will learn MongoDB which is classified as NOSQL document-oriented database. Data in MongoDB is stored in JSON based query language. It is flexible and easy to scale. Another component you will learn is Express popularly known as backend web application framework. The express framework is being used to develop robust web applications. Another component of MERN course is react which is JavaScript library popular to build user interface and interactivity on the client side. Some of the popular web applications like Facebook extensively uses react in the frontend for interactivity. React was first introduced by a developer in Facebook. React is an alternate to Angular JS a frontend application development framework which differentiates MERN from MEAN course. Node.js is a cross platform JavaScript runtime environment used to build scalable network applications." descriptionthree="
@@ -47,13 +51,13 @@ In this full stack developer course, MERN developer will use JavaScript on both 
 Prerequisite
 If you want to study MERN stack developer course then you need to have a basic understanding of web along with HTML and CSS. However, it is necessary to have a good understanding of Object Oriented Programming. If you are an existing backend application developer and want to switch to MERN then it will be very easy for you to understand the course."/>
    </div>
-<div class="flex flex-col items-center m-20">
+<div class="flex flex-col items-center m-20" data-aos="fade-left" data-aos-duration="2000">
    <x-accordion titleaccordion="HTML Fundamentals"/>
    <x-accordion titleaccordion="Css Fundamentals"/>
    <x-accordion titleaccordion="JavaScript Fundamentals"/>
    </div>
 <x-heading heading="Similar Programs For You"/>
-   <div class="container p-20">
+   <div class="container px-20" data-aos="fade-down-right">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <!-- Include your Tailwind CSS components here -->
         <x-trainingcardraj coursename="Python" coursedescription="Full stack python course" months="3"  image="{{ asset('images/bloginisde-image.png') }}"/>
@@ -64,5 +68,13 @@ If you want to study MERN stack developer course then you need to have a basic u
 
     </div>
    <x-footer/>
+   <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+        AOS.init();
+        animateNumbers();
+    });
+
+   </script>
 </body>
 </html>

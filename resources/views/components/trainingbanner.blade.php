@@ -1,4 +1,4 @@
-<div class="container-fluid relative">
+<div class="container-fluid relative" data-aos="fade-up-right">
     <img src="images/trainingbanner.jpg" alt="Training" class="h-[500px] w-[100%] object-cover object-top">
     
     <div class=" bg-black opacity-50 absolute top-0 w-full h-full">

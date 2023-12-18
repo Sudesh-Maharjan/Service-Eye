@@ -4,12 +4,17 @@
 
    <title>Services</title>
    @vite('resources/css/app.css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 </head>
+      
+
 
 <body class=" flex items-center flex-col">
    <x-header/>
    <!-- service banner start -->
-   <div class="grid  xs:grid-cols-1 lg:grid-cols-2 items-center w-auto ">
+   <div class="grid  xs:grid-cols-1 lg:grid-cols-2 items-center w-auto" data-aos="zoom-out-right" data-aos-duration="1500">
       <div class="w-[600px] flex justify-center flex-col ml-20">
          <h1 class="text-5xl text-left m-2 font-bold">IT Consulting Services <br>
             For Your </h1>
@@ -60,6 +65,12 @@
    <!-- Our products end -->
    <x-subscribe/>
    <x-footer/>
+   <script>
+   
+   document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+         });
+   
+   </script>
 </body>
-
 </html>

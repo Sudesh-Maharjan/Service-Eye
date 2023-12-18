@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <title>Projects</title>
     @vite('resources/css/app.css')
 </head>
@@ -28,7 +30,7 @@
         </header>
     </div>
     <div class="px-20">
-        <div class="flex flex-wrap justify-center">
+        <div class="flex flex-wrap justify-center" data-aos="flip-left" data-aos-duration="1500">
             <x-project projectimages="{{URL('images/project1.png')}}" />
             <x-project projectimages="{{URL('images/project1 6.png')}}" />
             <x-project projectimages="{{URL('images/project1 7.png')}}" />
@@ -52,6 +54,13 @@
     <x-teamcard />
     </div>
     <x-footer />
+    <script>
+   
+   document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+         });
+   
+   </script>
 </body>
 
 </html>
