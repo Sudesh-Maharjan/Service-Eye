@@ -43,7 +43,14 @@
             <x-project projectimages="{{URL('images/project3 7.png')}}" />
         </div>
     </div>
+    <div class="grid grid-cols-4 px-20 m-10">
     <x-teamcard />
+    <x-teamcard />
+    <x-teamcard />
+    <x-teamcard />
+    <x-teamcard />
+    <x-teamcard />
+    </div>
     <x-footer />
 </body>
 

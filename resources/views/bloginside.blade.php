@@ -10,7 +10,6 @@
   <body>
 
     <div class="container ">
-       
     <x-bloginside blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogbanner.png') }}" blogdescription="Hello guys my name is Rahul Maharjan.I live in Patan" />
     
   </body>

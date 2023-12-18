@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content {
+    order: 1; 
+}
+
+.image-content {
+    order: 2; 
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start; 
+    }
+
+    .text-content {
+        flex: 1;
+        order: 0; 
+        margin-right: 20px; 
+    }
+
+    .image-content {
+        order: 1; 
+    }
+}

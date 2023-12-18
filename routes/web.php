@@ -33,6 +33,12 @@ Route::get('/blog', function () {
 Route::get('/', function () {
     return view('Homepage');
 })->name('Homepage') ;
+Route::get('/bloginside', function () {
+    return view('bloginside');
+})->name('bloginside') ;
+Route::get('/test', function () {
+    return view('test');
+})->name('test') ;
 
 
 

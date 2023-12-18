@@ -18,16 +18,16 @@
    <x-happyusers title="Services" emoji="<i class='fa-solid fa-hand-holding-heart'></i>" numbers="200"  class="animated-number"  data-target="200"/>
    <x-happyusers title="Connection" emoji="<i class='fa-solid fa-database'></i>" numbers="500"  class="animated-number"  data-target="500"/>
 </div>
-<div class="flex flex-row justify-center mt-14">
+<div class="flex flex-col md:flex-row justify-center mt-14">
 <div class="p-2 m-2 flex justify-center">
-   <div class="w-[475px] p-3 m-2">
+   <div class="xs:[200px] w-[475px] p-3 m-2 ">
    <h1 class="text-2xl font-bold">Our services</h1>
    <h1 class="text-3xl font-bold mt-5">It Services and <br>the Future</h1>
    <p class="text-md font-bold mt-10">Our IT Services are designed to adapt the ever-changing digital landscape. We provide decentralized, open-source solutions that are fast, reliable and accessible to everyone. Experience the power of Web3 applications with us.</p>
    <button class="mt-7 shadow-lg bg-gray-500 text-blue-900 p-3 rounded-lg font-bold">View More Services</button>
    </div>
 </div>
-<div class="grid xs:grid-cols-1 lg:grid-cols-2 gap-10">
+<div class="grid xs:grid-cols-1 lg:grid-cols-2 gap-10 justify-center">
    <x-service heading="Web development"
          description="Web We carry more than just good coding skills. Our experience makes us stand out from other web development."
          image="{{ URL('images/webdev.png') }}" />
@@ -62,6 +62,13 @@
         </div>
     </div>
 <div class="mt-10 mx-24">
+
+<div class="">
+    <x-conecttheapps/>
+
+</div>
+
+
 <x-heading heading="Our Core Products"/>
 
         <div class="mt-4 font-bold text-xl text-center">
@@ -71,11 +78,34 @@
             </p>
 
 </div>
-<div class="grid xs:grid-cols-1 lg:grid-cols-3 mx-20 my-10">
+<div class="grid xs:grid-cols-1 lg:grid-cols-3 my-10 gap-20 justify-center">
     <x-coreproducts coreproducts="Hello Sawari - Digital Yatri" image="{{URL('images/ce0b004827ca7325950f5fea9099113e.jpeg')}}"/>
     <x-coreproducts coreproducts="Business X - B2B2C Market" image="{{URL('images/4a298846d34f7d52b2fca9fcc990f874.png')}}" />
     <x-coreproducts coreproducts="Guru Mantra - Digital Education" image="{{URL('images/79f05ec0a023982bf713f08762df7a78.png')}}"/>
     </div>
+<x-heading heading="Our Clients"/>
+<p class="text-xl text-center m-5">We take pride in serving a wide range of clients, from small local banks to large international financial institutions. </p>
+        <div class="grid grid-cols-5 px-20 items-center justify-center">
+    <x-ourclient imageclient="{{URL('images/home.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/populartea.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/sofa.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/uba.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/sofa.png')}}"/>
+    
+    <x-ourclient imageclient="{{URL('images/sofa.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/uba.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/sofa.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/populartea.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/home.png')}}"/>
+
+    <x-ourclient imageclient="{{URL('images/home.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/populartea.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/sofa.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/uba.png')}}"/>
+    <x-ourclient imageclient="{{URL('images/sofa.png')}}"/>
+            </div>
+<x-footer/>
+</body>
    <script>
        document.addEventListener('DOMContentLoaded', function () {
            animateNumbers();
@@ -106,6 +136,4 @@
            });
        }
    </script>
-<x-footer/>
-</body>
 </html>

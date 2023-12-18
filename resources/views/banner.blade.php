@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +26,7 @@
             </div>
         </div>
 
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- Use the 'x-blogcards' component as before -->
+        <div class="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogcard.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
             <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogcard.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
             <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/bloginisde-image.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
