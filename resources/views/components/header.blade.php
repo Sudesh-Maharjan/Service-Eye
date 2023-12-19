@@ -48,7 +48,7 @@
 </style>
 
 
-<div class="flex items-center justify-between p-4 w-full h-[110px]  sticky top-0 bg-white shadow-md z-20">
+<div class="flex items-center justify-between w-full h-[110px]  sticky top-0 bg-white shadow-md z-20">
     <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('images/header.png')}}" class="h-[110px] p-2" alt=""></a>
 
     
@@ -77,9 +77,9 @@
         </ul>
     </div>
 
-    <div class="flex justify-end items-center md:hidden lg:flex">
+    <div class=" justify-end items-center hidden md:flex ">
         <!-- Enroll With Us button for larger screens -->
-        <a href="{{url('/contactus')}}" class="font-bold text-white bg-blue-950 rounded px-4 py-2 hover:bg-blue-800">Enroll With Us</a>
+        <a href="{{url('/contactus')}}" class="font-bold text-white bg-blue-950 rounded px-4 py-2 hover:bg-blue-800 ">Enroll With Us</a>
     </div>
 
     <div class="flex justify-center items-center m-5 lg:hidden">

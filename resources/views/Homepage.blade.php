@@ -7,16 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/happyusers.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        if (window.innerWidth > 500) {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"><\/script>');
+
+            // Include AOS styles dynamically
+            const aosStyles = document.createElement('link');
+            aosStyles.rel = 'stylesheet';
+            // aosStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css';
+            document.head.appendChild(aosStyles);
+        }
+    </script>
 </head>
 
 <body>
     <x-header />
     <x-homebanner />
 
-    <div class="grid xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5" data-aos="fade-right"
-        data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
+    <div class="grid xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5" data-aos="fade-left"
+        data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
         <x-happyusers title="User" emoji="<i class='fa-regular fa-face-smile '></i>" numbers="80"
             class="animated-number-User" data-target="80" />
         <x-happyusers title="Projects" emoji="<i class='fa-solid fa-bullseye'></i>" numbers="150"
@@ -27,9 +36,9 @@
             class="animated-number-Connection" data-target="500" />
     </div>
 
-    <div class="flex flex-col md:flex-row justify-center mt-14">
+    <div class="flex flex-col md:flex-row justify-center mt-10 w-auto">
         <div class="p-2 m-2 flex justify-center" data-aos="fade-right" data-aos-duration="1500">
-            <div class="xs:[200px] w-[475px] p-3 m-2 ">
+            <div class=" w-auto md:w-[450px] p-3 my-2 mx-10 ">
                 <h1 class="text-2xl font-bold">Our services</h1>
                 <h1 class="text-3xl font-bold mt-5">It Services and <br>the Future</h1>
                 <p class="text-md font-bold mt-10">Our IT Services are designed to adapt the ever-changing digital
@@ -57,7 +66,7 @@
 
     </div>
 
-    <div class="px-20 mt-20" data-aos="flip-left" data-aos-duration="1500">
+    <div class="mx-20 mt-5" data-aos="flip-left" data-aos-duration="1500">
         <x-heading heading="Our Projects" />
         <div class="flex flex-wrap justify-center">
             <x-project projectimages="{{URL('images/project1.png')}}" />
@@ -80,7 +89,7 @@
             <x-conecttheapps />
 
         </div>
-
+</div>
 
         <x-heading heading="Our Core Products" />
 
@@ -122,13 +131,19 @@
             <x-ourclient imageclient="{{URL('images/uba.png')}}" />
             <x-ourclient imageclient="{{URL('images/sofa.png')}}" />
         </div>
-        <x-footer />
+
+        <x-footer class="w-[100%]" />
+ 
 </body>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        AOS.init();
-        // animateNumbers();
-    });
+   if (window.innerWidth > 500) {
+            // Initialize AOS
+            document.addEventListener('DOMContentLoaded', function () {
+                AOS.init();
+                // animateNumbers();
+            });
+        }
 
     function animateNumbers() {
         const elements = document.querySelectorAll('.animated-number');
@@ -154,7 +169,7 @@
             updateNumber();
         });
     }
-
+   
 </script>
 
 </html>

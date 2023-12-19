@@ -1,4 +1,4 @@
-<div class=" p-4 h-54 w-96 shadow-lg flex flex-row items-start justify-center rounded-lg hover:cursor-pointer hover:bg-blue-300 hover:opacity-80 duration-1000 gap-4 group" data-aos="fade-right" data-aos-duration="1500">
+<div class=" p-4 h-54 w-96 shadow-lg flex flex-row items-center justify-center rounded-lg hover:cursor-pointer hover:bg-blue-300 hover:opacity-80 duration-1000 gap-4 group" data-aos="fade-right" data-aos-duration="1500">
 <div class="m-2 w-auto h-auto ">
 <img src="{{$image}}" alt="" class="h-22 w-28 transform  group-hover:scale-110 transition-transform duration-2000">
 </div>

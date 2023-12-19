@@ -1,8 +1,6 @@
-<div class="banner h-1/2 flex items-center justify-center flex-col" >
-    <div class="banner-content max-w-90 ">
-        <div class="flex-container ">
-    <div class="banner-content max-w-90 flex items-center ">
-            <div class="text-content flex-1 p-20 h-[500px]">
+<div class="h-1/2 flex items-center justify-center flex-col" >
+    <div class=" max-w-90 flex items-center flex-col md:flex-row">
+            <div class="text-content flex-1 p-20 h-[500px] ">
                 <h1 class="text-5xl font-bold">We Design Amazing</h1>
                 <h2 class="text-3xl font-semibold">Experience For You.</h2>
                 <h5 class="text-lg">Find the perfect IT Solutions</h5>
@@ -16,5 +14,4 @@
                 <img src="{{ url('Images/5ac27e8e0d2c75dbb4edcfad3a2b3ba2.jpg') }}" alt="Banner Image" class="w-[700px] h-auto">
             </div>
         </div>
-    </div>
 </div>

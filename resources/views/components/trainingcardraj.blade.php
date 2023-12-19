@@ -1,7 +1,7 @@
-<div class="container mx-auto p-4 rounded-lg">
+<div class=" mx-auto p-4 rounded-lg flex flex-col ">
         <div class=" flex flex-wrap justify-between">
-            <div class=" h-auto mb-4 ">
-                <div class="card training-card transition-transform transform hover:scale-130 ">
+            <div class="w-auto mb-4 ">
+                <div class=" training-card transition-transform transform hover:scale-130 ">
                     <div class="overflow-hidden">
                         <img src="{{$image}}" class="card-img-top training-card-image" alt="...">
                     </div>
@@ -13,8 +13,8 @@
                         <p class="card-text training-card-text text-lg font-medium text-justified">
                             {{$coursedescription}}
                         </p>
-                        <div class="flex justify-between items-center mt-2">
-                            <div class="bg-gray-600 p-2 rounded-md text-white hover:bg-gray-500">Course Detail</div>
+                        <div class="flex justify-center items-center mt-2">
+                            <div class="bg-gray-600 p-2 rounded-md text-white hover:bg-gray-500 xs:w-40 md:w-auto m-3">Course Detail</div>
                             <h6 class="mt-1">Duration: {{$months}} months</h6>
                         </div>
                     </div>

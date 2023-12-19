@@ -21,7 +21,7 @@
                 outsourcing is just a tool to
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
                 between a client company.</p>
-            <div class="categories font-bold text-2xl flex justify-center items-center mb-8 gap-6">
+            <div class=" font-bold text-2xl flex justify-center items-center mb-8 gap-6 flex-col lg:flex-row">
                 <a href="#" class="category text-blue-800 hover:underline">All</a>
                 <a href="#" class="category text-blue-800 hover:underline">Design</a>
                 <a href="#" class="category text-blue-800 hover:underline">Development</a>
@@ -46,7 +46,7 @@
             <x-project projectimages="{{URL('images/project3 7.png')}}" />
         </div>
     </div>
-    <div class="grid grid-cols-4 px-20 m-10">
+    <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 m-10">
     <x-teamcard />
     <x-teamcard />
     <x-teamcard />
