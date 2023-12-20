@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TeamController;
@@ -45,9 +46,7 @@ Route::post("/updateblog/{id}",[BlogController::class,"update"])->name("blog.upd
 Route::get("/team",[TeamController::class,"usershow"])->name("usershow");
 
 
-Route::get('/', function () {
-    return view('Homepage');
-})->name('Homepage') ;
+Route::get('/', [ProjectController::class,'usershow'])->name('Homepage') ;
 
 Route::get('/bloginside', function () {
     return view('bloginside');

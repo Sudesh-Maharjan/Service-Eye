@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\service;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -38,6 +39,13 @@ class ProjectController extends Controller
         $teams = Project::all(); // Fetch all teams without filtering
         return view('Projects.ShowProject', compact('teams'));
     }
+    public function usershow()
+    {
+        $projects = Project::orderBy("id","asc")->get();
+        $services = service::orderBy("id", "asc")->take(4)->get();
+        return view('Homepage', compact('projects','services'));
+    }
+    
     public function edit($id)
     {
         $team = Project::findOrFail($id);

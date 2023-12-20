@@ -5,7 +5,7 @@
         <div class="text-3xl">
     {!! $emoji !!}
     </div>
-            <div class="so font-bold text-navy-blue text-xl m-2">{{$title}}</div>
+            <div class="so font-bold  text-xl m-2 text-blue-950">{{$title}}</div>
             <div id="animated-number-{{$title}}" class="text-3xl font-bold"  data-target="{{$numbers}}"></div>
     </div>
 </div>
