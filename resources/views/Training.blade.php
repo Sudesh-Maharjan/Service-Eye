@@ -9,7 +9,6 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
    <title>Training</title>
    <link rel="stylesheet" href="{{ asset('css/trainingcard.css') }}">
-
 </head>
 
 <body>
@@ -81,7 +80,6 @@ If you want to study MERN stack developer course then you need to have a basic u
             image="{{ asset('images/bloginisde-image.png') }}" />
       </div>
    </div>
-
    </div>
    <x-footer />
    <script>
@@ -92,8 +90,6 @@ If you want to study MERN stack developer course then you need to have a basic u
   });
          animateNumbers();
       });
-
-
       //  start scroll on click
       function syllabusection() {
          const syllabus = document.getElementById('syllabus');
@@ -103,13 +99,10 @@ If you want to study MERN stack developer course then you need to have a basic u
             const offset = syllabus.offsetTop - navbarHeight;
             window.scroll({ top: offset, left: 0, behavior: 'smooth' });
          }
-
       }
-
       function overview() {
          const des = document.getElementById('des');
          const navbarHeight = 150;
-
          if (des) {
             const offset = des.offsetTop - navbarHeight;
             window.scroll({ top: offset, left: 0, behavior: 'smooth' });

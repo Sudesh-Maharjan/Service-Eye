@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .blog-title{
-   margin-top: 150px;
+   margin-top: -100px;
 font-size: 50px;
 font-weight: 700;
 line-height: 59px;
 letter-spacing: 0em;
 text-align: left;
-color: black;
+color: #324465;
 font-weight: bolder;
 }
 .blog-description{
@@ -21,10 +21,11 @@ text-align: left;
 }
 .blog-date{
     font-family: Roboto;
-font-size: 14px;
+font-size: 16px;
 font-weight: 700;
 margin-top: 3px;
 margin-left: 15px;
+margin-bottom: 10px;
 letter-spacing: 0em;
 
 }
@@ -43,7 +44,14 @@ text-align: justified;
 
 }
 .blog-card-text{
-    font-size: 15px;
+
+    font-family: Roboto;
+font-size: 17px;
+font-weight: 400;
+line-height: 35px;
+letter-spacing: 0em;
+text-align: left;
+
     
 }
 .image-border{
@@ -84,16 +92,24 @@ text-align: justified;
        margin-top: 90px;
      
     }
+    
 
     
   }
+  .blog-card-border{
+    border-radius: 90px;
+  }
 
   @media screen and (max-width:600px) {
+    .blog-title{
+        margin-top: 50px;
+    }
     .banner-image{
         display: none;
     }
     .blog-description{
         margin-bottom: 30px;
+        
     }
     
   }

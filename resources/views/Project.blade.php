@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +8,11 @@
     <title>Projects</title>
     @vite('resources/css/app.css')
 </head>
-
 <body>
-
     <div class="container mx-auto">
         <x-header />
         <header class="p-8 flex flex-col items-center">
         <x-heading heading="Our Projects" />
-
             <p class="description text-center text-gray-700 mb-8 w-2/3 text-lg font-bold">Software development
                 outsourcing is just a tool to
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
@@ -56,12 +52,9 @@
     </div>
     <x-footer />
     <script>
-   
    document.addEventListener('DOMContentLoaded', function () {
             AOS.init();
          });
-   
    </script>
 </body>
-
 </html>

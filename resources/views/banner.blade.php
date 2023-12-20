@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tailwind CSS Demo</title>
    @vite('resources/css/app.css')
-
     <link rel="stylesheet" href="{{ asset('css/banner.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
-
 <body class="">
 <x-header/>
 <div class="px-24" >
@@ -28,14 +25,12 @@
                 </div>
             </div>
         </div>
-
         <div class="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-left"
             data-aos-duration="1500">
-            <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogcard.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
-            <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/blogcard.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
-            <x-blogcards blogtitle="Changing to a new society" update="2073-01-10" image="{{ asset('images/bloginisde-image.png') }}" blogdescription="Hello guys my name is Rahul Maharjan. I live in Patan"/>
+            @foreach($blogs as $blog)
+            <a href="{{route('blog.insideblog',$blog->id)}}"> <x-blogcards blogtitle="{{$blog->title}}" id="{{$blog->id}}" update="{{$blog->updated_at}}" image="{{asset('uploads')}}/{{$blog->image}}" blogdescription="{{$blog->description}}"/></a>
+            @endforeach
         </div>
-        
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
@@ -44,9 +39,6 @@
         AOS.init();
         // animateNumbers();
     });
-
     </script>
 </body>
-
 </html>
-
