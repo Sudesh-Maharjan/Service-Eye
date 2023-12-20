@@ -109,7 +109,7 @@
 <a href="{{url('/project')}}" class="font-bold text-black hover:text-gray-700 nav-link">Portfolio</a>
 <a href="{{url('/training')}}" class="font-bold text-black hover:text-gray-700 nav-link">Training</a>
 <a href="{{url('/blog')}}" class="font-bold text-black hover:text-gray-700 nav-link">Blog</a>
-<button class="bg-blue-950 p-3 rounded-lg text-white font-bold m-4">Request a Quote</button>
+<a href="{{url('/contactus')}}" class="bg-blue-950 p-3 rounded-lg text-white font-bold m-4 hover:text-black">Enroll With Us</a>
     <!-- Add more links as needed -->
 </div>
 
