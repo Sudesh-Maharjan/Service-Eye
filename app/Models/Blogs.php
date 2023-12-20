@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blogs extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'image', 'description'];
+    protected $fillable = ['title', 'image', 'description','created_at'];
     public function getTitleAttribute($value)
     {
    

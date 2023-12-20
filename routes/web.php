@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\ServicesController;
 |
 */
 
-Route::get('/services',  [ServicesController::class, 'showservices'])->name('services');
+Route::get('/services',  [ServicesController::class, 'servicesshow'])->name('services');
 Route::get('/project', function () {
     return view('Project');
 });
@@ -38,5 +39,9 @@ Route::get("/editblog/{id}",[BlogController::class,"edit"])->name("blog.edit");
 
 
 Route::post("/updateblog/{id}",[BlogController::class,"update"])->name("blog.update");
+
+// team
+Route::get("/team",[TeamController::class,"usershow"])->name("usershow");
+
 
 

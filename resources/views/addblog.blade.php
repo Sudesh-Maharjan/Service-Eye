@@ -31,7 +31,7 @@
 
                 <label for="description" class="block text-sm font-medium text-gray-600 mt-4">Description</label>
 <div id="editor-container" class="mt-1 border rounded focus:outline-none focus:border-blue-500"></div>
-<textarea id="description" name="description" style="display: none;">{{$blogs->description}}</textarea>
+<textarea id="description" value="{{$blogs->description}}" name="description" style="display: none; height: 200px;"></textarea>
 
 
             <label for="image" class="block text-sm font-medium text-gray-600 mt-4">Image (Optional)</label>
@@ -47,13 +47,16 @@
     <script>
     var quill = new Quill('#editor-container', {
         theme: 'snow',
-        placeholder: 'Write something amazing...',
+        placeholder: '',
+        html: '{{$blogs->description}}'
     });
 
     quill.on('text-change', function () {
-        // Update the hidden textarea with Quill's HTML content
-        document.getElementById('description').value = quill.root.innerHTML;
-    });
+    document.getElementById('description').value = quill.root.innerHTML;
+
+   
+    document.getElementById('description').style.height = quill.root.scrollHeight + 'px';
+});
 </script>
 
 </body>

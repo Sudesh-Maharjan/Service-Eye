@@ -1,0 +1,21 @@
+/* resources/css/app.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Add your custom styles here */
+
+.service {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.service img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add more styles as needed */
