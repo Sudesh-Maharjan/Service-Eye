@@ -1,4 +1,4 @@
-<div class=" mx-auto p-4 rounded-lg flex flex-col ">
+<div class=" mx-auto px-4 rounded-lg flex flex-col ">
         <div class=" flex flex-wrap justify-between">
             <div class="w-auto mb-4 ">
                 <div class=" training-card transition-transform transform hover:scale-130 ">
@@ -13,7 +13,7 @@
                         <p class="card-text training-card-text text-lg font-medium text-justified">
                             {{$coursedescription}}
                         </p>
-                        <div class="flex justify-center items-center mt-2">
+                        <div class="flex justify-start items-center mt-2">
                             <div class="bg-gray-600 p-2 rounded-md text-white hover:bg-gray-500 xs:w-40 md:w-auto m-3">Course Detail</div>
                             <h6 class="mt-1">Duration: {{$months}} months</h6>
                         </div>

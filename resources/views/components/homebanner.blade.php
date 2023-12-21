@@ -1,8 +1,8 @@
 <div class="h-1/2 flex items-center justify-center flex-col" >
-    <div class=" max-w-90 flex items-center flex-col md:flex-row">
+    <div class=" max-w-90 flex items-center flex-col mdl:flex-row">
             <div class="text-content flex-1 p-20 h-[500px] ">
-                <h1 class="md:text-6xl xs:text-4xl font-bold mb-3">We Design Amazing</h1>
-                <h2 class="md:text-5xl xs:text-3xl font-semibold">
+                <h1 class="md:text-5xl xs:text-4xl font-bold mb-3">We Design Amazing</h1>
+                <h2 class="md:text-4xl xs:text-3xl font-semibold">
                    <span class="text-blue-950">Experience</span> 
                      For You.</h2>
                 <h5 class="text-xl mt-3 font-bold">Find the Perfect IT Solutions</h5>
@@ -12,7 +12,7 @@
                 <br>
                 <div class="flex"><img src="{{ url('images/journey.png') }}" alt=""><h6 class="text-lg ml-4 text-bold">Watch Our JOURNEY</h6></div>
             </div>
-                <img src="{{ url('images/GIF.gif') }}" alt="Banner Image" class="w-[700px] h-auto">
+                <img src="{{ url('images/GIF.gif') }}" alt="Banner Image" class=" md:w-[400px] lg:w-[700px] h-auto">
             </div>
         </div>
 </div>

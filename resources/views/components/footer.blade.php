@@ -42,10 +42,10 @@
                     <div class="Rectangle72 w-14 h-1 left-0 top-0 absolute bg-white rounded-sm"></div>
                 </div>
                 <ul id="myList2">
-                    <li><a href="/" class="text-white">Web design & development</a></li>
-                    <li><a href="/" class="text-white">Mobile app development </a></li>
+                    <li><a href="/" class="text-white">Web Design & Development</a></li>
+                    <li><a href="/" class="text-white">Mobile App Development </a></li>
                     <li><a href="/" class="text-white">Digital Marketing</a></li>
-                    <li><a href="/" class="text-white">Branding & identity</a></li>
+                    <li><a href="/" class="text-white">Branding & Identity</a></li>
                     <li><a href="/" class="text-white">Software Development</a></li>
                     <li><a href="/" class="text-white">IT Consultancy</a></li>
                 </ul>
@@ -81,9 +81,8 @@
         </div>
     </footer>
     <div class="w-full p-4 bg-black text-white text-center">
-        <div class="flex flex-wrap items-center justify-between mx-4 md:mx-10">
+        <div class="flex flex-wrap items-center justify-center mx-4 md:mx-10">
             <p id="copy" class="mb-4 md:mb-0">Copyright &copy; 2023 Service Eye. All Rights Reserved</p>
-            <p id="serv">Designed &amp; Developed by: <a href="/" class="text-white">Service Eye</a></p>
         </div>
     </div>
     <script>

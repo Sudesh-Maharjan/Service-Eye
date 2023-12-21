@@ -1,0 +1,42 @@
+/* @keyframes moveUpFadeIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0.25;
+    }
+    25% {
+        opacity: 0.50;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveDownFadeOut {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+}
+
+
+.image-animate {
+    position: absolute;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+ */

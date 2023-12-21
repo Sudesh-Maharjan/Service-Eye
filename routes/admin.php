@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
@@ -7,6 +8,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TrainingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
 
 Route::get('/addservice',  [ServicesController::class, 'addservices'])->name('addservices');
 Route::post('/storeservices',  [ServicesController::class, 'storeservices'])->name('storeservices');

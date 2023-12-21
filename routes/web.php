@@ -29,6 +29,15 @@ Route::get('/bloginside/{id}', [BlogController::class,"bloginside"])->name("blog
 Route::get('/trainingcard', function () {
     return view('trainingcardraj');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function(){
+
+    Route::get('dashboard', 'AdminController@dashboard');
+ });
+
+
 Route::get('/blog', [BlogController::class,"blogshow"])->name("blog.blogshow");
 
 Route::get("/addblog",[BlogController::class,"addblog"])->name("addblog");

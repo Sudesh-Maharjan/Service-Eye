@@ -16,6 +16,8 @@ export default {
         lg: "960px",
         lgl: "1024px",
         xl: "1280px",
+        xxl: "1392px",
+        xxxl: "2000px",
       },
       colors: {
         themecolor: '#324465',

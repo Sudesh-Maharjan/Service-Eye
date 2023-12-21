@@ -11,9 +11,9 @@
 <body>
     <div class="container mx-auto">
         <x-header />
-        <header class="p-8 flex flex-col items-center">
+        <header class=" flex flex-col items-center">
         <x-heading heading="Our Projects" />
-            <p class="description text-center text-gray-700 mb-8 w-2/3 text-lg font-bold">Software development
+            <p class=" text-center text-gray-700 mb-8 w-2/3 text-lg font-bold">Software development
                 outsourcing is just a tool to
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
                 between a client company.</p>

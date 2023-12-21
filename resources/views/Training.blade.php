@@ -5,8 +5,8 @@
    @vite('resources/css/app.css')
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
    <title>Training</title>
    <link rel="stylesheet" href="{{ asset('css/trainingcard.css') }}">
 </head>
@@ -16,7 +16,7 @@
    <x-trainingbanner />
    <div class="mx-auto -mt-28">
       <h1 class="text-black">Syllabus</h1>
-      <div class="flex flex-wrap justify-center gap-16 mt-10" data-aos="flip-up" data-aos-duration="1500">
+      <div class="flex flex-wrap justify-center gap-28 mt-10" data-aos="flip-up" data-aos-duration="1500">
          @for ($i = 0; $i
          < 3; $i++) <x-traininginfocard title="Batch Start Date" date="Jan. 24 2023" data-aos-duration="4000" />
          @endfor
@@ -31,7 +31,7 @@
             <span class="why-join-this-programs-span2 ">?</span>
          </span>
       </div>
-      <div class="flex flex-wrap justify-center gap-16 mt-10" data-aos="flip-up" data-aos-duration="1500">
+      <div class="flex flex-wrap justify-center gap-40 mt-10" data-aos="flip-up" data-aos-duration="1500">
          <x-trainingcard w1="Real" w2="World"
             desc="Get insights on how ai is across companies like E-sewa ,Daraz, Khalti... more"
             tcimg="{{URL('images/rocket 1.png')}}" />
@@ -43,13 +43,23 @@
             tcimg="{{URL('images/rocket 3.png')}}" />
       </div>
    </div>
-   <div class="flex justify-center gap-10 m-5 text-white bg-blue-950">
-      <button class="m-3 p-3 w-34 h-16 hover:cursor-pointer bg-transparent font-bold" onclick="overview()">Course
-         Overview</button>
-      <button class=" m-3 p-3 w-34 h-16 hover:cursor-pointer bg-transparent font-bold"
-         onclick="syllabusection()">Syllabus</button>
-   </div>
-   <div class="" data-aos="flip-up" data-aos-duration="1000" id="des">
+   
+
+   <!-- tailwind tabs -->
+   <div class="mt-12 mb-4 border-black text-white shadow-lg rounded-xl                                                                                                                                                                                                                 dark:border-gray-700 mx-40 rounded-t-lg">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+        <li class="me-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 hover:bg-gray-700 bg-black text-white"  onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
+        </li>
+        <li class="me-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300  hover:bg-gray-700 bg-black text-gray-300" onclick="showTab('syllabus')" id="syllabus-tab" data-tabs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</button>
+        </li>
+    </ul>
+</div>
+
+<div id="default-tab-content">
+    <div class="hidden p-4 rounded-lg  dark:bg-gray-800" id="course" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="" data-aos="flip-up" data-aos-duration="1000" id="des">
       <x-description titleone="Description" titletwo="Full Stack Product Engineer Using MERN"
          titlethree="How the course is designed?" titlefour="Advantage of studying MERN"
          descriptionone="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN MongoDB, Express.js, React, Node.js, Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape. Whether you're a beginner or looking to upskill, join us on this transformative learning experience and unlock a future filled with endless possibilities in the world of software development and design."
@@ -60,7 +70,9 @@ In this full stack developer course, MERN developer will use JavaScript on both 
 Prerequisite
 If you want to study MERN stack developer course then you need to have a basic understanding of web along with HTML and CSS. However, it is necessary to have a good understanding of Object Oriented Programming. If you are an existing backend application developer and want to switch to MERN then it will be very easy for you to understand the course." />
    </div>
-   <div class="" id=syllabus>
+    </div>
+    <div class="hidden p-4 rounded-lg dark:bg-gray-800" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
+    <div class="" id=syllabus>
       <x-heading heading="Syllabus" />
    </div>
    <div class="flex flex-col items-center m-10" data-aos="flip-up" data-aos-duration="2000">
@@ -68,8 +80,13 @@ If you want to study MERN stack developer course then you need to have a basic u
       <x-accordion titleaccordion="Css Fundamentals" />
       <x-accordion titleaccordion="JavaScript Fundamentals" />
    </div>
+    </div>
+   
+</div>
+   <!-- tailwind tabs -->
+
    <x-heading heading="Similar Programs For You" />
-   <div class="" data-aos="flip-up">
+   <div class="mx-32" data-aos="flip-up">
       <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
          <!-- Include your Tailwind CSS components here -->
          <x-trainingcardraj coursename="Python" coursedescription="Full stack python course" months="3"
@@ -83,32 +100,28 @@ If you want to study MERN stack developer course then you need to have a basic u
    </div>
    <x-footer />
    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-         AOS.init({
-    // Customize AOS configurations here
-    offset: 1, // Adjust the offset value as needed
-  });
-         animateNumbers();
-      });
-      //  start scroll on click
-      function syllabusection() {
-         const syllabus = document.getElementById('syllabus');
-         const navbarHeight = 150;
-         console.log(syllabus);
-         if (syllabus) {
-            const offset = syllabus.offsetTop - navbarHeight;
-            window.scroll({ top: offset, left: 0, behavior: 'smooth' });
-         }
-      }
-      function overview() {
-         const des = document.getElementById('des');
-         const navbarHeight = 150;
-         if (des) {
-            const offset = des.offsetTop - navbarHeight;
-            window.scroll({ top: offset, left: 0, behavior: 'smooth' });
-         }
-      }
-      //  end scroll on click
+    document.addEventListener('DOMContentLoaded', function () {
+                AOS.init({
+  disable: function() {
+    var maxWidth = 1200;
+    return window.innerWidth < maxWidth;
+  }
+});
+                // animateNumbers();
+            });
+            function showTab(tabId) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll('[role="tabpanel"]');
+        tabContents.forEach((content) => {
+            content.classList.add('hidden');
+        });
+
+        // Show the clicked tab content
+        const clickedTabContent = document.getElementById(tabId);
+        if (clickedTabContent) {
+            clickedTabContent.classList.remove('hidden');
+        }
+    }
    </script>
 </body>
 
