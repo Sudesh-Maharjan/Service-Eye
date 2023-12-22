@@ -8,7 +8,7 @@
   <title>Admin</title>
 </head>
 <body>
-@include('admin.layout.sidebar');
+@include('admin.layout.sidebar')
   
 </body>
 </html>
