@@ -68,6 +68,5 @@ Route::get('/test', function () {
 //Contact Us
 Route::get("/contactus",[ContactController::class,'add_contactus'])->name("contactus");
 Route::get("/postcontactus",[ContactController::class,'post_contactus'])->name("postcontactus");
-Route::get("/showcontactus",[ContactController::class,'show_contactus'])->name("showcontactus");
-Route::get("/deleteshowcontactus/{id}",[ContactController::class,'desletecontact'])->name("deleteshowcontactus");
+
 

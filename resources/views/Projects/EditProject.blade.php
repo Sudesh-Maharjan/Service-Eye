@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Project</title>
+    @vite('resources/css/app.css')
+
 </head>
-<body>
-   
-<div class="container">
+<body class>
+   @include('admin.layout.sidebar')
+<div class="container ">
     <h2>Edit Project</h2>
-    <form action="{{route('project.update',['id' => $team->id])}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('project.update',['id' => $team->id])}}" class="flex flex-col items-end p-5 mx-36 shadow-lg" method="post" enctype="multipart/form-data" onsubmit="closeEditModal()">
         @csrf
         @if(Session::has('message'))
             <div class="bg-green-200 text-green-700 p-3 rounded mb-4">

@@ -75,6 +75,7 @@ public function update(Request $request, $id)
       
         'is_visible' => 'boolean',
     ]);
+    $validatedData['urls'] = isset($validatedData['urls']) ? array_filter($validatedData['urls'], 'strlen') : [];
     $validatedData['urls'] = array_filter($validatedData['urls'], 'strlen');
 
     $validatedData['urls'] = json_encode($validatedData['urls']);
@@ -87,6 +88,11 @@ public function update(Request $request, $id)
 }
 public function delete($id){
     $team=Teams::find($id);
+    if (!$team) {
+        // Team not found, handle the error accordingly (redirect, show a message, etc.)
+        session()->flash("error", "Team not found!");
+        return redirect()->route("teams.show");
+    }
     $team->delete();
     session()->flash("message","deleted Successfully");
     return redirect()->route("teams.show");

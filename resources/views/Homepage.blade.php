@@ -26,7 +26,7 @@
     </div>
     </div>
     <div class="flex flex-col xl:flex-row justify-center items-center mt-10 w-auto gap-3">
-        <div class="p-2 m-2 flex justify-start w-auto shadow-md rounded-xl" data-aos="fade-left" data-aos-duration="1500">
+        <div class="p-2 m-2 flex justify-start w-auto rounded-xl" data-aos="fade-left" data-aos-duration="1500">
             <div class=" w-auto md:w-[450px] p-3 my-2 mx-10 ">
                 <h1 class="text-3xl font-bold text-blue-950">Our Services</h1>
            

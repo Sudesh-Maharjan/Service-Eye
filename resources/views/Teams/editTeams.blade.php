@@ -10,10 +10,11 @@
 
 <h1>Edit Team</h1>
 
-<form action="{{ route('teams.update', ['id' => $team->id]) }}" class=" h-96  my-20 flex flex-col items-center justify-center" method="post" enctype="multipart/form-data">
+<form action="{{ route('teams.update', ['id' => $team->id]) }}" id="edit-team-form" class="flex flex-col justify-center items-center bg-slate-300 gap-16  rounded-lg ml-64 p-10 mt-5" method="post" enctype="multipart/form-data">
     @csrf
-    <div class="w-[500px] flex flex-col justify-center items-center rounded-lg shadow-lg p-8 bg-gray-100 dark:bg-gray-800">
         <!-- Add other fields as needed -->
+      <div class="flex">
+      <div class="flex flex-col ml-60 ">
         <div class="input-group">
             <label for="name" class="font-bold text-xl text-start">Name:</label><br>
             <input type="text" name="name" value="{{ $team->name }}" class="p-2 w-96 rounded-md" required>
@@ -34,6 +35,8 @@
             <label for="interest" class="font-bold text-xl">Interest:</label><br>
             <textarea name="interest" class="p-2 w-96 rounded-md" required>{{ $team->interest }}</textarea>
         </div>
+        </div>
+        <div class="flex flex-col ml-10 ">
         <div class="input-group">
             <label for="urls" class="font-bold text-xl">URLs:</label><br>
             <div id="urls-container">
@@ -45,9 +48,9 @@
                 @endforeach
             </div>
         </div>
-        <button type="button" id="add-url" class="font-bold text-xl mt-4 bg-blue-500 text-white p-2 rounded-md">Add URL</button>
+        <button type="button" id="add-url" class="h-10 font-bold text-xl mt-2 bg-blue-500 text-white p-2 rounded-md w-28">Add URL</button>
         <div class="input-group">
-            <label for="image" class="font-bold text-xl text-start">Image:</label><br>
+            <label for="image" class="font-bold text-xl text-start">Image:</label>
             <input type="file" name="image" accept="image/*" class="p-2 w-96 rounded-md">
         </div>
         <div class="input-group">
@@ -57,7 +60,11 @@
                 <option value="0" {{ !$team->is_visible ? 'selected' : '' }}>No</option>
             </select>
         </div>
-        <button type="submit" class="mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"><span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Update</button>
+    </div>
+      </div> 
+    <div class="flex">
+    <button type="submit" class=" text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 m-2 text-center">Update</button>
+    <button type="button" id="cancel-button" class=" text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-2">Cancel</button>
     </div>
 </form>
 
@@ -66,6 +73,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         const urlsContainer = document.getElementById('urls-container');
         const addUrlButton = document.getElementById('add-url');
+
+        if (!urlsContainer || !addUrlButton) {
+            console.error('Required elements not found.');
+            return;
+        }
 
         addUrlButton.addEventListener('click', function() {
             const urlInputContainer = document.createElement('div');
@@ -89,6 +101,20 @@
             urlInputContainer.appendChild(removeUrlButton);
             urlsContainer.appendChild(urlInputContainer);
         });
+
+        const cancelBtn = document.getElementById('cancel-button');
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', function() {
+                // Find the form element and remove it
+                const form = cancelBtn.closest('form');
+                if (form) {
+                    form.parentNode.removeChild(form);
+                } else {
+                    console.error('Form element not found.');
+                }
+            });
+        }
     });
 </script>
 

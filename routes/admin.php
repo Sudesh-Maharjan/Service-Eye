@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\admin\PortfolioController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
+
+use App\Http\Controllers\admin\ProjectCatController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TeamController;
@@ -44,11 +48,19 @@ Route::post('/projects/update/{id}',[ProjectController::class,'update'])->name('
 Route::get('/projects/delete/{id}',[ProjectController::class,'delete'])->name('project.delete');
 
 
+Route::get('/project-cat', [ProjectCatController::class, 'project_cat'])->name('project-cat.project_cat');
+Route::post('/project-cat/store', [ProjectCatController::class, 'store'])->name('project-cat.store');
+Route::delete('/project-cat/{projectCat}', [ProjectCatController::class, 'destroy'])->name('project-cat.destroy');
 
 
+//Project
+Route::get("/aproject", [PortfolioController::class, 'index'])->name("aproject");
+Route::post("/addproject", [PortfolioController::class, 'addproject'])->name("addproject");
+Route::get('/aproject/{id}', [PortfolioController::class, 'destroy'])->name('deleteproject');
+Route::post("/updateproject/{id}",[PortfolioController::class,"updateproject"])->name("updateproject");
+Route::get("/editaProject/{id}", [PortfolioController::class, 'editaProject'])->name("editaProject");
 
-
-
-
-
+//Contact Us
+Route::get("/showcontactus",[ContactController::class,'show_contactus'])->name("showcontactus");
+Route::get("/deleteshowcontactus/{id}",[ContactController::class,'desletecontact'])->name("deleteshowcontactus");
 
