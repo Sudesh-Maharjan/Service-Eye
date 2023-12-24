@@ -18,7 +18,7 @@
     @csrf
     <!-- Add other fields as needed -->
     <h1 class="text-2xl font-bold text-start">Edit Team</h1>
-    <div class="flex shadow-lg rounded-lg p-5 w-auto gap-20 justify-center ml-52">
+    <div class="flex shadow-lg rounded-lg p-5 w-[1100px] gap-20 justify-center ml-52">
         <div class="flex flex-col">
         <a href="{{redirect()->back()}}" class="flex">
         
@@ -43,8 +43,6 @@
             <textarea name="job_description" class="p-2 w-auto rounded-md border-black border-2 h-32" required>{{ $team->job_description }}</textarea>
         </div>
        
-        </div>
-        <div class="flex flex-col">
         <div class="input-group">
             <label for="interest" class="font-bold text-xl ">Interest</label><br>
             <textarea name="interest" class="p-2 w-auto rounded-md border-black border-2" required>{{ $team->interest }}</textarea>
@@ -72,9 +70,10 @@
                 <option value="1" {{ $team->is_visible ? 'selected' : '' }}>Yes</option>
                 <option value="0" {{ !$team->is_visible ? 'selected' : '' }}>No</option>
             </select>
-        </div>
     </div>
 </div> 
+</div>
+
 <div class="flex">
 <button type="submit" class=" relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"><span
                                     class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Update</button>
