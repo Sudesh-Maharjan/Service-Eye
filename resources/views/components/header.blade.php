@@ -60,7 +60,7 @@
                 <a href="{{route('Homepage')}}" class="font-bold text-black hover:text-gray-700 nav-link">Home</a>
             </li>
             <li>
-                <a href="#" class="font-bold text-black hover:text-gray-700 nav-link">About Us</a>
+                <a href="{{url('/about')}}" class="font-bold text-black hover:text-gray-700 nav-link">About Us</a>
             </li>
             <li>
                 <a href="{{route('services')}}" class="font-bold text-black hover:text-gray-700 nav-link">Services</a>
@@ -104,12 +104,12 @@
 
 <span class="close-btn text-3xl" onclick="closeSidebar()">&times;</span>
  <a href="{{route('Homepage')}}" class="font-bold text-black hover:text-gray-700 nav-link">Home</a>
-<a href="#" class="font-bold text-black hover:text-gray-700 nav-link">About Us</a>
+<a href="{{url('/about')}}" class="font-bold text-black hover:text-gray-700 nav-link">About Us</a>
 <a href="{{route('services')}}" class="font-bold text-black hover:text-gray-700 nav-link">Services</a>
 <a href="{{url('/project')}}" class="font-bold text-black hover:text-gray-700 nav-link">Portfolio</a>
 <a href="{{url('/training')}}" class="font-bold text-black hover:text-gray-700 nav-link">Training</a>
 <a href="{{url('/blog')}}" class="font-bold text-black hover:text-gray-700 nav-link">Blog</a>
-<a href="{{url('/contactus')}}" class="bg-blue-950 p-3 rounded-lg text-white font-bold m-4 hover:text-black">Enroll With Us</a>
+<a href="{{url('/contactus')}}" class="shadow-lg bg-gray-500 p-3 rounded-lg  font-bold m-4 hover:bg-white hover:text-black ">Enroll With Us</a>
     <!-- Add more links as needed -->
 </div>
 

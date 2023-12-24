@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact us </title>
     @vite('resources/css/app.css')
 </head>
 <body>
-    <x-header />
+@include('admin.layout.sidebar')
+
     <div class='flex min-h-screen items-center justify-center  '>
         <div class="flex items-center justify-center min-h-auto">
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -49,6 +50,5 @@
             </div>
         </div>
     </div>
-    <x-footer />
 </body>
 </html>

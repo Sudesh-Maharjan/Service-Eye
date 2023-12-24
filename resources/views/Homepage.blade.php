@@ -46,7 +46,7 @@
          @endforeach
         </div>
     </div>
-    <div class="mx-20 mt-5" data-aos="flip-left" data-aos-duration="1500">
+    <div class="mx-24 shadow-xl mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
         <x-heading heading="Our Projects" />
         <div class="flex flex-wrap justify-center">
             <x-project projectimages="{{URL('images/project1.png')}}" />

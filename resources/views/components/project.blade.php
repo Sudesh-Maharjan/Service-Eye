@@ -1,4 +1,4 @@
-    <div class="p-0 ">
+    <div class="">
     <div class="flex flex-wrap justify-center bg-black">
         <div class=" relative overflow-hidden group ">
             <img class="xs:w-72 md:w-auto h-full object-cover transform scale-100 transition-transform duration-300 group-hover:scale-110 "

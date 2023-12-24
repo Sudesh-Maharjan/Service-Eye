@@ -1,4 +1,4 @@
-<div class=" mx-auto p-4 rounded-lg flex flex-col ">
+<div class=" mx-auto px-4 rounded-lg flex flex-col ">
         <div class=" flex flex-wrap justify-between">
             <div class="w-auto mb-4 ">
                 <div class=" training-card transition-transform transform hover:scale-130 ">

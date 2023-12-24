@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
    <title>Services</title>
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
    @vite('resources/css/app.css')
 </head>
 <body class="flex flex-col items-center">
@@ -37,9 +37,15 @@
    <!-- Our products end -->
    <x-footer/>
    <script>
-   document.addEventListener('DOMContentLoaded', function () {
-            AOS.init();
-         });
+ document.addEventListener('DOMContentLoaded', function () {
+                AOS.init({
+  disable: function() {
+    var maxWidth = 1200;
+    return window.innerWidth < maxWidth;
+  }
+});
+                // animateNumbers();
+            });
    </script>
 </body>
 </html>

@@ -11,6 +11,6 @@
         <button class="bg-blue-950 text-white p-3 rounded-lg font-bold hover:bg-blue-800" type="button">Connect Your Tools</button>
     </div>
     <div class=" order-2 md:order-1" data-aos="fade-right" data-aos-duration="1500">
-        <img src="{{url('Images/TOOLS.png')}}" alt="tools" class="h-2/3 w-auto">
+        <img src="{{url('Images/TOOLS.png')}}" alt="tools" class=" h-2/3 w-auto">
     </div>
 </div>
