@@ -8,7 +8,7 @@
                         <button
                             id="faqs-title-01"
                             type="button"
-                            class="flex items-center justify-between w-full text-left font-semibold py-2 bg-themecolor p-4 text-white"
+                            class="flex w-full items-center justify-between text-left font-semibold py-2 bg-themecolor p-4 text-white"
                             @click="expanded = !expanded"
                             :aria-expanded="expanded"
                             aria-controls="faqs-text-01"
@@ -29,7 +29,8 @@
                         >
                         <div class="overflow-hidden ">
                             <p class="p-3 font-bold">
-                                If you go over your organisations or user limit, a member of the team will reach out about bespoke pricing. In the meantime, our collaborative features won't appear in accounts or users that are over the 100-account or 1,000-user limit.
+                            {{$titledescription}}
+                                
                             </p>
                         </div>
                     </div>

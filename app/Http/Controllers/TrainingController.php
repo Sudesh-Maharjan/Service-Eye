@@ -43,6 +43,7 @@ class TrainingController extends Controller
 
 
     }
+   
     public function updatetraining($id){
         $training=Training::find($id);
        $url="/admin/edittraining"."/".$id;

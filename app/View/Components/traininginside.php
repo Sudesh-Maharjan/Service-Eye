@@ -3,22 +3,17 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
 
-class description extends Component
+class traininginside extends Component
 {
-    public $titleone;
-    public $titletwo;
-   
     /**
      * Create a new component instance.
      */
-    public function __construct($titleone, $titletwo )
+    public function __construct()
     {
-        $this->titleone = $titleone;
-        $this->titletwo = $titletwo;
-      
+        //
     }
 
     /**
@@ -26,6 +21,6 @@ class description extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.description');
+        return view('components.traininginside');
     }
 }

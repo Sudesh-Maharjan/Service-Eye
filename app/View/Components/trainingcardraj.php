@@ -12,18 +12,20 @@ class trainingcardraj extends Component
     public $coursedescription;
     public $months;
     public $image;
+    public $a;
    
 
     /**
      * Create a new component instance.
      */
-    public function __construct($coursename,$coursedescription,$months,$image)
+    public function __construct($coursename,$coursedescription,$months,$image,$a)
 
     {
         $this->image=$image;
         $this->coursename=$coursename;
         $this->coursedescription=$coursedescription;
         $this->months=$months;
+        $this->a=$a;
 
 
 

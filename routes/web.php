@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicesController;
@@ -22,9 +23,8 @@ Route::get('/services',  [ServicesController::class, 'servicesshow'])->name('ser
 Route::get('/project', function () {
     return view('Project');
 });
-Route::get('/training', function () {
-    return view('Training');
-});
+Route::get('/traininginside/{id}', [CourseController::class,"usershowinside"])->name('course.inside');
+
 Route::get('/bloginside/{id}', [BlogController::class,"bloginside"])->name("blog.insideblog");
 Route::get('/trainingcard', function () {
     return view('trainingcardraj');
@@ -55,6 +55,8 @@ Route::get('/bloginside', function () {
 Route::get('/test', function () {
     return view('test');
 })->name('test') ;
+Route::get('/training', [CourseController::class,'usershow'])->name('training') ;
+
 
 //Contact Us
 Route::get("/contactus",[ContactController::class,'add_contactus'])->name("contactus");

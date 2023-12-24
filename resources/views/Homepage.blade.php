@@ -12,7 +12,8 @@
 <body>
     <x-header />
     <x-homebanner />
-    <div class="grid xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-28" data-aos="fade-down"
+    <div class="flex justify-center">
+    <div class="grid xs:grid-cols-1 md:grid-cols-2 mdl:grid-cols-2 lg:grid-cols-4 container  justify-evenly  mx-auto flex-wrap" data-aos="fade-down"
          data-aos-duration="1000">
         <x-happyusers title="User" emoji="<i class='fa-regular fa-face-smile '></i>" numbers="80"
             class="animated-number-User" data-target="80" />
@@ -23,21 +24,20 @@
         <x-happyusers title="Connection" emoji="<i class='fa-solid fa-database'></i>" numbers="500"
             class="animated-number-Connection" data-target="500" />
     </div>
-    <div class="flex flex-col md:flex-row justify-center mt-10 w-auto">
+    </div>
+    <div class="flex flex-col xl:flex-row justify-center items-center mt-10 w-auto">
         <div class="p-2 m-2 flex justify-center w-auto" data-aos="fade-left" data-aos-duration="1500">
             <div class=" w-auto md:w-[450px] p-3 my-2 mx-10 ">
                 <h1 class="text-3xl font-bold text-blue-950">Our Services</h1>
-           
-
                 <h1 class="text-3xl font-bold mt-5"><span class="text-blue-950">IT</span>  Services and <br>the <span class="text-blue-950">Future</span></h1>
                 <p class="text-md font-bold mt-10">Our IT Services are designed to adapt the ever-changing digital
                     landscape. We provide decentralized, open-source solutions that are fast, reliable and accessible to
                     everyone. Experience the power of Web3 applications with us.</p>
-                <button class="mt-7 shadow-lg  text-white p-3 rounded-lg font-bold  bg-blue-950 font-bold hover:bg-blue-800">View More
+                <button class="mt-7 shadow-lg  text-white p-3 rounded-lg  bg-blue-950 font-bold hover:bg-blue-800 ">View More
                     Services</button>
             </div>
         </div>
-        <div class="grid xs:grid-cols-1 lg:grid-cols-2 gap-10 justify-center" 
+        <div class="grid xs:grid-cols-1 lg:grid-cols-2 gap-5"
             data-aos-duration="1500">
             @foreach($services as $service)
    <x-service heading="{!!$service->title!!}"
@@ -62,35 +62,28 @@
             <x-conecttheapps />
         </div>
 </div>
-        <x-heading heading="Our Core Products" />
-        <div class="mt-4 font-bold text-xl text-center">
+<div class="mt-4 font-bold text-xl text-center">
+            <x-heading heading="Our Core Products" />
             <p>"Revolutions your workflow with our cutting edge  IT product, seamlessly integrating innovative technology <br>
                 to enhance efficiency, security and user experience."
                 <!-- <img src="{{url('Images/Vector (1).png')}}" alt="rightarrow">
                 <img src="{{url('Images/Vector (2).png')}}" alt="leftarrow"> -->
             </p>
         </div>
-        <div class="grid xs:grid-cols-1 lg:grid-cols-3 my-10 gap-1 pl-28 justify-center items-center">
+        <div class="flex xs:flex-col mdl:flex-row  justify-center items-center gap-10 m-10">
             @foreach($projects as $project)
           <a href="{{$project->url}} " target="_blank"><x-coreproducts coreproducts="{{$project->name}}"
                 image="{{asset('uploads')}}/{{$project->image}}" url="{{$project->url}}" />
-                @endforeach</a>  
-          
+                @endforeach</a>
         </div>
         <x-heading heading="Our Clients" />
         <p class="text-xl text-center m-5 font-bold">We take pride in serving a wide range of clients, from small local banks to
             large international financial institutions. </p>
         <div class="grid grid-cols-5 px-20 items-center justify-center">
-            <x-ourclient imageclient="{{URL('images/home.png')}}" />
-            <x-ourclient imageclient="{{URL('images/populartea.png')}}" />
-            <x-ourclient imageclient="{{URL('images/sofa.png')}}" />
-            <x-ourclient imageclient="{{URL('images/uba.png')}}" />
-            <x-ourclient imageclient="{{URL('images/sofa.png')}}" />
-            <x-ourclient imageclient="{{URL('images/sofa.png')}}" />
-            <x-ourclient imageclient="{{URL('images/uba.png')}}" />
-            <x-ourclient imageclient="{{URL('images/sofa.png')}}" />
-            <x-ourclient imageclient="{{URL('images/populartea.png')}}" />
-            <x-ourclient imageclient="{{URL('images/home.png')}}" />
+        @foreach($clients as $client)
+           <a href="{{$client->url}}"><x-ourclient imageclient="{{asset('uploads')}}/{{$client->image}}" />
+        </a>
+        @endforeach
         </div>
         <x-footer class="w-[100%]" />
 </body>

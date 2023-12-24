@@ -9,12 +9,14 @@ use Illuminate\Contracts\View\View;
 class accordion extends Component
 {
     public $titleaccordion;
+    public $titledescription;
     /**
      * Create a new component instance.
      */
-    public function __construct($titleaccordion)
+    public function __construct($titleaccordion,$titledescription)
     {
         $this->titleaccordion = $titleaccordion;
+        $this->titledescription=$titledescription;
     }
 
     /**

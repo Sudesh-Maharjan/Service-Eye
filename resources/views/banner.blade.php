@@ -13,10 +13,10 @@
 <x-header/>
 <div class="px-24" >
     <div class="container mx-auto p-4">
-        <div class="flex flex-col md:flex-row justify-center items-center" data-aos="fade-right"
+        <div class="flex flex-col md:flex-row justify-center items-center " data-aos="fade-right"
             data-aos-duration="1500">
             <div class="md:w-1/2 lg:w-5/12">
-                <div class="text-5xl font-bold text-black">BLOG</div>
+                <div class="text-5xl font-bold text-blue-950">BLOG</div>
                 <div class="text-black font-bold">Our blogs aim to provide the latest news and insights on various topics in the easiest way.</div>
             </div>
             <div class="md:w-1/2 lg:w-7/12 flex justify-center">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-left"
+        <div class="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
             data-aos-duration="1500">
             @foreach($blogs as $blog)
             <a href="{{route('blog.insideblog',$blog->id)}}"> <x-blogcards blogtitle="{{$blog->title}}" id="{{$blog->id}}" update="{{$blog->updated_at}}" image="{{asset('uploads')}}/{{$blog->image}}" blogdescription="{{$blog->description}}"/></a>

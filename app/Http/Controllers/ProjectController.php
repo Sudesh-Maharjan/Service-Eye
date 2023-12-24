@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\Project;
 use App\Models\service;
 use Illuminate\Http\Request;
@@ -43,8 +44,14 @@ class ProjectController extends Controller
     {
         $projects = Project::orderBy("id","asc")->get();
         $services = service::orderBy("id", "asc")->take(4)->get();
-        return view('Homepage', compact('projects','services'));
+        $clients = Client::where('is_visible', true)->get();
+        return view('Homepage', compact('projects','services','clients'));
     }
+  
+    
+        // Fetch all teams without filtering
+        
+    
     
     public function edit($id)
     {
