@@ -6,7 +6,7 @@
     <title>Admin project</title>
     @vite('resources/css/app.css')
 </head>
-<body class="flex flex-wrap justify-between mx-20">
+<body class="flex flex-wrap justify-between mx-20 bg-gray-100">
     
 <div class="w-2/12">
 @include('admin.layout.sidebar')
@@ -14,11 +14,11 @@
 <div class="w-10/12 flex p-4">
     <div class="container mx-auto p-4 flex flex-col justify-end">
 
-        <h1 class="text-2xl font-bold mb-4">Projects</h1>
+        <h1 class="text-4xl font-bold mb-4">Portfolio</h1>
         <!-- <h2 class="text-xl font-bold mb-4">Add Project</h2> -->
         <div class="">
 
-            <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="openAddProjectPopup()">Add Project</button>
+            <button type="button" class="rounded p-3 overflow-hidden group bg-black relative hover:bg-gradient-to-r hover:from-black hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-black transition-all ease-out duration-300"onclick="openAddProjectPopup()">Add Project</button>
         </div>
         <div id="addProjectPopup" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 hidden">
             <div class="flex justify-center items-center h-full">
@@ -81,10 +81,12 @@
                         </td>
                         <td class="py-2 px-4 border-b">
                             <a href="{{ route('editaProject', $project->id) }}">
-                                <button type="submit" class=" inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">Update</button>
+                                <button type="submit" class=" relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"><span
+                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Update</button>
                             </a>
                             <a href="{{ route('deleteproject', $project->id) }}">
-                                <button type="submit" class="inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">Delete</button>
+                                <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"><span
+                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0" onclick="return confirm('Are you sure you want to delete this team?');">Delete</button>
                             </a>
                         </td>
                     </tr>

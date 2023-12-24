@@ -6,11 +6,13 @@
     <title>Project Categories</title>
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
 </head>
 <body class="font-sans bg-gray-100">
-   @include('admin.layout.sidebar')
+    @include('admin.layout.sidebar')
     <div class=" flex flex-wrap justify-center items-center max-w-xl mx-auto p-4 shadow-lg rounded-lg mt-44">
-        <div class="flex flex-col">
+        <div class="flex flex-col ">
+         
             <h2 class="text-2xl font-semibold mb-4">Project Categories</h2>
             @if(Session::has('message'))
             <div class=" bg-red-200 text-red-800 p-3 mb-4 rounded ">

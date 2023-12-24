@@ -9,7 +9,8 @@
 </head>
 <body class="font-sans bg-gray-100">
 @include('admin.layout.sidebar')
-    <div id="editProjectPopup" class="max-w-lg mx-auto p-4 bg-white mt-10 rounded-md shadow-md">
+<div id="editProjectPopup" class="max-w-lg mx-auto p-4 bg-white rounded-md shadow-md">
+    <h1 class="text-4xl font-bold">Portfolio</h1>
         <h2 class="text-2xl font-bold mb-4">Edit Project</h2>
         <form action="{{ route('updateproject', $project->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -37,7 +38,7 @@
                 </select>
             </div>
             <div class="mb-4">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Update</button>
+                <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Update</button>
             </div>
         </form>
     </div>
