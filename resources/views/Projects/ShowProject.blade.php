@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Teams</title>
+    <title>Projects</title>
 </head>
 <body class="flex flex-col h-screen bg-gray-100 dark:bg-gray-900 items-center">
 @include('admin.layout.sidebar')
@@ -18,11 +18,11 @@
 @endif
 
 
-<div class="px-44">
-    <h1 class="text-4xl font-bold m-4 ml-28">Projects</h1>
-    <a href="{{route('project.create')}}"  class="m-5 rounded px-5 py-2 overflow-hidden group bg-black relative hover:bg-gradient-to-r hover:from-black hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-black transition-all ease-out duration-300 ml-28"><button class="mb-5 ">Add Projects </button></a>
-@if(count($teams) > 0)
-    <table border="1" cellspacing="0"  class=" ml-28  min-w-full leading-normal">
+<div class="ml-56">
+    <h1 class="text-4xl font-bold m-4">Projects</h1>
+    <a href="{{route('project.create')}}"  class="addbutton">Add Projects </a>
+    @if(count($teams) > 0)
+    <table border="1" cellspacing="0"  class="m-5 min-w-full leading-normal">
         <thead>
             <tr>
                 <th scope="col" class="thclass ">Name</th>

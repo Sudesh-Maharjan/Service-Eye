@@ -14,27 +14,27 @@
     <form action="{{route('project.update',['id' => $team->id])}}" class="flex flex-col items-center p-5" method="post" enctype="multipart/form-data" onsubmit="closeEditModal()">
         @csrf
         <div class="">
-            <div class="flex flex-col">
-            <a href="{{redirect()->back()}}" class="flex">
-            
-                <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
-            </a>
-            </div>
-        <h2 class="text-black text-start font-bold text-4xl m-5">Project</h2>
-        <h2 class="text-black text-start font-bold text-2xl m-5">Edit Project</h2>
-        <div class="flex flex-col shadow-lg rounded-lg p-4 m-5 text-xl ">
-        @if(Session::has('message'))
-            <div class="bg-green-200 text-green-700 p-3 rounded mb-4">
-                {{Session::get('message')}}
-            </div>
-            @endif
-
+            <h2 class="text-black text-start font-bold text-4xl m-5 ">Project</h2>
+            <div class="flex flex-col shadow-lg rounded-lg p-4 m-5 text-xl ">
+                <h2 class="text-black text-start font-bold text-2xl my-3">Update Project</h2>
+                @if(Session::has('message'))
+                <div class="bg-green-200 text-green-700 p-3 rounded mb-4">
+                    {{Session::get('message')}}
+                </div>
+                @endif
+                
+                <div class="flex flex-col">
+                <a href="{{redirect()->back()}}" class="flex">
+                
+                    <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
+                </a>
+                </div>
         <!-- Add other fields as needed -->
         <label for="name" class="font-bold m-2">Name</label>
-        <input type="text" name="name" class="p-2 m-2 border-black border-2 rounded-md" value="{{ $team->name }}" required>
+        <input type="text" name="name" class="p-2 m-2  border-2 rounded-md" value="{{ $team->name }}" required>
 
         <label for="url" class="font-bold m-2">Url</label>
-        <input type="text" name="url" class="p-2 m-2 border-black border-2 rounded-md" value="{{ $team->url }}" required>
+        <input type="text" name="url" class="p-2 m-2  border-2 rounded-md" value="{{ $team->url }}" required>
 
 
       

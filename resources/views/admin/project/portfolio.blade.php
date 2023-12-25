@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin project</title>
+    <title>Portfolio</title>
     @vite('resources/css/app.css')
 </head>
 <body class="flex flex-wrap justify-between mx-20 bg-gray-100">
@@ -18,7 +18,7 @@
         <!-- <h2 class="text-xl font-bold mb-4">Add Project</h2> -->
         <div class="">
 
-            <button type="button" class="rounded p-3 overflow-hidden group bg-black relative hover:bg-gradient-to-r hover:from-black hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-black transition-all ease-out duration-300"onclick="openAddProjectPopup()">Add Project</button>
+            <button type="button" class="addbutton"onclick="openAddProjectPopup()">Add Project</button>
         </div>
         <div id="addProjectPopup" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 hidden">
             <div class="flex justify-center items-center h-full">

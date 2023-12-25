@@ -9,7 +9,7 @@
 <body>
 @include('admin.layout.sidebar')
 
-    <div class='flex min-h-screen items-center justify-center  '>
+    <div class='flex min-h-screen items-start justify-center mt-20 ml-52'>
         <div class="flex items-center justify-center min-h-auto">
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                 @if(Session::has('message'))

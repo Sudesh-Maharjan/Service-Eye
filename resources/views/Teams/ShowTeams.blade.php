@@ -6,7 +6,7 @@
     @vite('resources/css/app.css')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Teams</title>
+    <title>Our Team</title>
     <style>
         #warningAlert {
             position: fixed;
@@ -32,11 +32,11 @@
                     <h1 class="text-4xl font-bold text-start m-3 ">Teams</h1>
                     <a href="{{route('team.create')}}"
                          type="button"
-                            class="m-5 rounded px-5 py-2 overflow-hidden group bg-black relative hover:bg-gradient-to-r hover:from-black hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-black transition-all ease-out duration-300">
+                            class="addbutton">
                             Add Team</></a>
 
                     <a href="{{route('usershow')}}" type="button"
-                            class="m-5 rounded px-5 py-2 overflow-hidden group bg-black relative hover:bg-gradient-to-r hover:from-black hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-black transition-all ease-out duration-300">User
+                            class="addbutton">User
                             Visible Team</a>
                 </div>
             </div>
@@ -90,14 +90,14 @@
                         <button class="m-4 rounded-md p-3 flex justify-center items-center mt-8"style="background-color: {{ $team->is_visible ? 'green' : 'red' }}; color: white;">{{
                             $team->is_visible ? 'Yes' : 'No' }}</button></td>
                         <td class="tdclass">
-                            <div class="flex flex-col">
+                            <div class="flex flex-row">
                             <a  href="{{route('teams.edit',$team->id)}}"><button 
                                     class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"><span
                                         class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Update</span></button></a>
                             <a href="{{route('teams.delete',$team->id)}}"><button
                                     onclick="confirmDelete({{ $team->id }})"
                                     class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"><span
-                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Delete</span></button></a>
+                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0" onclick="return confirm('Are you sure you want to delete this team?');">Delete</span></button></a>
                                         </div>
                         </td>
                     </tr>
@@ -116,7 +116,7 @@
 <script>
 
     function hideWarningAlert() {
-        document.getElementById('warningAlert').classList.add('hidden');
+        document.getElementById('warningAlert').classList.add('hidden'); 
     }
 </script>
 

@@ -6,4 +6,8 @@ class ProjectCat extends Model
 {
     use HasFactory;
     protected $fillable = ['project_cat'];
+    public function category()
+    {
+        return $this->hasMany(Portfolio::class, 'project_cat_id');
+    }
 }

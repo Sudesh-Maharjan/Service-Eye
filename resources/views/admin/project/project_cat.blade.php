@@ -10,10 +10,11 @@
 </head>
 <body class="font-sans bg-gray-100">
     @include('admin.layout.sidebar')
-    <div class=" flex flex-wrap justify-center items-center max-w-xl mx-auto p-4 shadow-lg rounded-lg mt-44">
-        <div class="flex flex-col ">
+    <div class="">
+        <div class=" flex flex-wrap justify-center items-center max-w-xl mx-auto p-4 mt-28 ">
+        <h1 class="text-4xl text-start font-bold">Portfolio Categories</h1>
+        <div class="flex flex-col shadow-lg rounded-lg p-6 m-5 w-[1000px] bg-white">
          
-            <h2 class="text-2xl font-semibold mb-4">Project Categories</h2>
             @if(Session::has('message'))
             <div class=" bg-red-200 text-red-800 p-3 mb-4 rounded ">
                 {{Session::get('message')}}
@@ -63,5 +64,6 @@
         </div>
     </div>
     <!-- Include your footer component -->
+    </div>
 </body>
 </html>

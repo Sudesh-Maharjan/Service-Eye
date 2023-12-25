@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\PortfolioController;
 use App\Http\Controllers\admin\ProjectCatController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
@@ -49,6 +50,10 @@ Route::get('/projects/delete/{id}',[ProjectController::class,'delete'])->name('p
 // client
 Route::get('/client/create', [ClientController::class, 'create'])->name('client.create');
 Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
+Route::get('/client/show', [ClientController::class, 'show'])->name('client.show');
+Route::get('/clients/{id}/edit',[ClientController::class, 'edit'])->name('clients.edit');
+Route::post('/clients/{id}', [ClientController::class, 'update'])->name('clients.update');
+Route::get('/clients/{id}', [ClientController::class, 'destroy'])->name('clients.destroy');
 
 Route::get('courses/edit/{id}', [CourseController::class, 'edit'])->name('courses.edit');
 Route::post('courses/{id}', [CourseController::class, 'update'])->name('courses.update');
@@ -58,9 +63,18 @@ Route::get('/project-cat', [ProjectCatController::class, 'project_cat'])->name('
 Route::post('/project-cat/store', [ProjectCatController::class, 'store'])->name('project-cat.store');
 Route::delete('/project-cat/{projectCat}', [ProjectCatController::class, 'destroy'])->name('project-cat.destroy');
 
+//Blog
+
+Route::get("/addblog",[BlogController::class,"addblog"])->name("addblog");
+Route::post("/storeblog",[BlogController::class,"store"])->name("blog.store");
+Route::get("/showblog",[BlogController::class,"show"])->name("blog.show");
+
+Route::get("/deleteblog/{id}",[BlogController::class,"delete"])->name("blog.delete");
+Route::get("/editblog/{id}",[BlogController::class,"edit"])->name("blog.edit");
+
 
 //Project
-Route::get("/aproject", [PortfolioController::class, 'index'])->name("aproject");
+Route::get("/aproject", [PortfolioController::class, 'adminindex'])->name("aproject");
 Route::post("/addproject", [PortfolioController::class, 'addproject'])->name("addproject");
 Route::get('/aproject/{id}', [PortfolioController::class, 'destroy'])->name('deleteproject');
 Route::post("/updateproject/{id}",[PortfolioController::class,"updateproject"])->name("updateproject");
@@ -69,4 +83,3 @@ Route::get("/editaProject/{id}", [PortfolioController::class, 'editaProject'])->
 //Contact Us
 Route::get("/showcontactus",[ContactController::class,'show_contactus'])->name("showcontactus");
 Route::get("/deleteshowcontactus/{id}",[ContactController::class,'desletecontact'])->name("deleteshowcontactus");
-
