@@ -45,34 +45,45 @@
             right: 16px;
             cursor: pointer;
         }
-</style>
+        .sidebar a.active {
+    background-color: white;
+    border-right: 4px solid #3490dc; /* You can adjust this as needed */
+}
 
+/* Add this to your existing styles */
+.sidebar a:hover {
+    background-color: white;
+    border-right: 4px solid #3490dc; /* You can adjust this as needed */
+}
+
+/* Add this class to your active navigation links in your Blade template */
+.active {
+    border-bottom: 2px solid #3490dc;
+}
+</style>
 
 <div class="flex items-center justify-between w-full h-[110px]  sticky top-0 bg-white shadow-md z-20">
     <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('images/header.png')}}" class="h-[110px] p-2" alt=""></a>
-
-    
-
     <div class=" justify-center items-center m-5 hidden lg:flex ">
         <!-- Navbar links for larger screens -->
         <ul class="list-reset flex justify-end items-center space-x-5 ">
             <li>
-                <a href="{{route('Homepage')}}" class="font-bold text-black hover:text-gray-700 nav-link">Home</a>
+                <a href="{{route('Homepage')}}" class="font-bold text-black hover:text-gray-700 nav-link {{ request()->routeIs('Homepage') ? 'active' : '' }}">Home</a>
             </li>
             <li>
-                <a href="{{url('/about')}}" class="font-bold text-black hover:text-gray-700 nav-link">About Us</a>
+                <a href="{{url('/about')}}" class="font-bold text-black hover:text-gray-700 nav-link {{ request()->is('about*') ? 'active' : '' }}">About Us</a>
             </li>
             <li>
-                <a href="{{route('services')}}" class="font-bold text-black hover:text-gray-700 nav-link">Services</a>
+                <a href="{{route('services')}}" class="font-bold text-black hover:text-gray-700 nav-link {{ request()->routeIs('services') ? 'active' : '' }}">Services</a>
             </li>
             <li>
-                <a href="{{url('/project')}}" class="font-bold text-black hover:text-gray-700 nav-link">Portfolio</a>
+                <a href="{{url('/project')}}" class="font-bold text-black hover:text-gray-700 nav-link {{ request()->routeIs('project') ? 'active' : '' }}">Portfolio</a>
             </li>
             <li>
-                <a href="{{url('/training')}}" class="font-bold text-black hover:text-gray-700 nav-link">Training</a>
+                <a href="{{url('/training')}}" class="font-bold text-black hover:text-gray-700 nav-link  {{ request()->routeIs('training') ? 'active' : '' }}">Training</a>
             </li>
             <li>
-                <a href="{{url('/blog')}}" class="font-bold text-black hover:text-gray-700 nav-link">Blog</a>
+                <a href="{{url('/blog')}}" class="font-bold text-black hover:text-gray-700 nav-link  {{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a>
             </li>
         </ul>
     </div>

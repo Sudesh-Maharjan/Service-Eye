@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     @vite('resources/css/app.css')
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-
 <body class="flex flex-wrap justify-between mx-20 bg-gray-100">
     <div class="w-2/12">
         @include('admin.layout.sidebar')
@@ -16,19 +14,16 @@
     <div class="w-10/12 flex">
         <div class="container mx-auto p-4 flex flex-col justify-end">
             <h1 class="text-2xl font-bold mb-4">All Courses</h1>
-
             @if(Session::has('message'))
             <div class="text-red-500 text-base font-bold mb-4">
                 {{ Session::get('message') }}
             </div>
             @endif
-
             <a href="{{ route('courses.create') }}">
                 <button class="addbutton">
                     Add Course
                 </button>
             </a>
-
             <div class="overflow-x-auto mt-4">
                 <table class="min-w-full text-center bg-white border border-gray-300 rounded-md mt-4">
                     <thead>
@@ -48,8 +43,8 @@
                             <td class="border p-2">{{ $course->name }}</td>
                             <td class="border p-2">
                                 @if($course->image)
-                                <img src="{{ asset('uploads/' . $course->image) }}" alt="Course Image"
-                                    class="max-w-full h-auto">
+                                <img src="{{ asset('uploads/' . $course->image) }}"  alt="Course Image"
+                                    class="max-w-20 h-20">
                                 @else
                                 No Image
                                 @endif
@@ -79,5 +74,4 @@
         </div>
     </div>
 </body>
-
 </html>

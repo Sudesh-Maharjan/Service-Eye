@@ -4,130 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.ckeditor.com/4.17.0/standard/ckeditor.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <form action="{{ route('courses.update', $course->id) }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <input type="hidden" name="course_id" value="{{ $course->id }}">
-        <input type="hidden" name="old_image" value="{{ $course->image }}">
-        <!-- Existing fields -->
-        <label for="name">Course Name:</label>
-        <input type="text" name="name" value="{{ $course->name }}" required>
-        <label for="short_description">Short Description:</label>
-        <textarea name="short_description" required>{{ $course->short_description }}</textarea>
-        <label for="description">Description:</label>
-        <textarea name="description" required rows="10" cols="150">{{ $course->description }}</textarea>
-        <label for="image">Image:</label>
-        <input type="file" name="image" accept="image/*">
-        <label for="courseDuration">Course Duration:</label>
-        <input type="text" name="courseDuration" value="{{ $course->courseDuration }}" required>
-        <label for="Batchstartdate">Batch Start Date:</label>
-        <input type="date" name="Batchstartdate" value="{{ $course->Batchstartdate }}" required>
-        <label for="numberseats">Number of Seats:</label>
-        <input type="number" name="numberseats" value="{{ $course->numberseats }}" required>
-        <label for="format">Format:</label>
-<select name="format" required>
-    <option value="beginner" {{ $course->format == 'beginner' ? 'selected' : '' }}>Beginner</option>
-    <option value="intermediate" {{ $course->format == 'intermediate' ? 'selected' : '' }}>Intermediate</option>
-    <option value="advanced" {{ $course->format == 'advanced' ? 'selected' : '' }}>Advanced</option>
-</select>
-        <!-- Dynamic course program fields -->
-        <div id="coursePrograms">
-            <h2>Programs</h2>
-            <button type="button" id="addProgram">Add Program</button>
-            <!-- Existing program fields -->
-            @foreach($course->programs as $program)
-                <div class="program-input">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #F8FAFC;
+        padding: 20px;
+    }
+    .program-input {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #E2E8F0;
+        border-radius: 8px;
+        background-color: #FFFFFF;
+    }
+    .program-input input,
+    .program-input textarea,
+    .program-input button {
+        margin-top: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .program-input input[type="text"],
+    .program-input textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .program-input button {
+        background-color: #E53E3E;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .program-input button:hover {
+        background-color: #C53030;
+    }
+    .remove-syllabus,
+    .remove-program {
+        background-color: #E53E3E;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        padding: 8px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .remove-syllabus:hover,
+    .remove-program:hover {
+        background-color: #C53030;
+    }
+</style>
+<body class="font-sans antialiased bg-gray-100">
+    <div class="w-2/12">
+        @include('admin.layout.sidebar')
+    </div>
+    <div class=" w-10/12 container mx-auto p-8 max-w-xl">
+        <form action="{{ route('courses.update', $course->id) }}" method="post" enctype="multipart/form-data" class="grid gap-4">
+            <h1 class="text-2xl font-bold mb-4">Create Course</h1>
+            @csrf
+            <input type="hidden" name="course_id" value="{{ $course->id }}">
+            <input type="hidden" name="old_image" value="{{ $course->image }}">
+            <!-- Existing fields -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-600">Course Name:</label>
+                <input type="text" name="name" value="{{ $course->name }}" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="short_description" class="block text-sm font-medium text-gray-600">Short Description:</label>
+                <textarea name="short_description" class="mt-1 p-2 border border-gray-300 rounded-md w-full" required>{{ $course->short_description }}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium text-gray-600">Description:</label>
+                <textarea name="description" id="description" class="mt-1 p-2 border border-gray-300 rounded-md w-full" required>{{ $course->description }}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium text-gray-600">Image:</label>
+                <input type="file" name="image" accept="image/*" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="courseDuration" class="block text-sm font-medium text-gray-600">Course Duration:</label>
+                <input type="text" name="courseDuration" value="{{ $course->courseDuration }}" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="Batchstartdate" class="block text-sm font-medium text-gray-600">Batch Start Date:</label>
+                <input type="date" name="Batchstartdate" value="{{ $course->Batchstartdate }}" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="numberseats" class="block text-sm font-medium text-gray-600">Number of Seats:</label>
+                <input type="number" name="numberseats" value="{{ $course->numberseats }}" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            </div>
+            <div class="mb-4">
+                <label for="format" class="block text-sm font-medium text-gray-600">Format:</label>
+                <select name="format" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                    <option value="beginner" {{ $course->format == 'beginner' ? 'selected' : '' }}>Beginner</option>
+                    <option value="intermediate" {{ $course->format == 'intermediate' ? 'selected' : '' }}>Intermediate
+                    </option>
+                    <option value="advanced" {{ $course->format == 'advanced' ? 'selected' : '' }}>Advanced</option>
+                </select>
+            </div>
+            <!-- Dynamic course program fields -->
+            <div id="coursePrograms" class="mb-4">
+                <h2 class="text-xl font-bold mb-2">Programs</h2>
+                <!-- Existing program fields -->
+                @foreach($course->programs as $program)
+                <div class="program-input grid gap-4">
                     <input type="hidden" name="existing_program_ids[]" value="{{ $program->id }}">
-                    <input type="text" name="program_titles[]" value="{{ $program->title }}">
-                    <textarea name="program_descriptions[]" required rows="5" cols="70">{{ $program->description }}</textarea>
-                    <input type="file" name="program_icons[]" accept="image/*" >
-                    <button type="button" class="remove-program">Remove Program</button>
+                    <input type="text" name="program_titles[]" value="{{ $program->title }}" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Program Title">
+                    <textarea name="program_descriptions[]" required class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Program Description">{{ $program->description }}</textarea>
+                    <input type="file" name="program_icons[]" accept="image/*" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                    <div class="w-2/6">
+                        <button type="button" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring focus:border-red-300">
+                            Remove program
+                        </button>
+                    </div>
                 </div>
-            @endforeach
-        </div>
-        <div id="syllabusCourses">
-            <h2>Syllabus</h2>
-            <button type="button" id="addSyllabus">Add Syllabus</button>
-            @foreach($course->syllabuses as $syllabus)
-                <div class="program-input">
+                @endforeach
+                <button type="button" id="addProgram" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300">
+                    Add Program
+                </button>
+            </div>
+            <div id="syllabusCourses" class="mb-4">
+                <h2 class="text-xl font-bold mb-2">Syllabus</h2>
+                @foreach($course->syllabuses as $syllabus)
+                <div class="program-input grid gap-4">
                     <input type="hidden" name="existing_syllabus_ids[]" value="{{ $syllabus->id }}">
-                    <input type="text" name="syllabus_titles[]" value="{{ $syllabus->title }}">
-                    <textarea name="syllabus_descriptions[]" required rows="5" cols="70">{{ $syllabus->description }}</textarea>
-                    <button type="button" class="remove-syllabus">Remove Syllabus</button>
+                    <input type="text" name="syllabus_titles[]" value="{{ $syllabus->title }}" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Syllabus Title">
+                    <textarea name="syllabus_descriptions[]" required class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Syllabus Description">{{ $syllabus->description }}</textarea>
+                    <div class="w-2/6">
+                        <button type="button" class="remove-syllabus px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring focus:border-red-300">
+                            Remove Syllabus
+                        </button>
+                    </div>
                 </div>
-            @endforeach
-        </div>
-        <button type="submit">Update Course</button>
-    </form>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const courseProgramsContainer = document.getElementById('coursePrograms');
-            const addProgramButton = document.getElementById('addProgram');
-            const syllabusProgramsContainer = document.getElementById('syllabusCourses');
-            const addSyllabusButton = document.getElementById('addSyllabus');
-            addSyllabusButton.addEventListener('click', function () {
-                const syllabusContainer = document.createElement('div');
-                syllabusContainer.classList.add('program-input');
-                const titleInput = document.createElement('input');
-                titleInput.type = 'text';
-                titleInput.name = 'syllabus_titles[]';
-                titleInput.placeholder = 'Syllabus Title';
-                const descriptionInput = document.createElement('textarea');
-                descriptionInput.name = 'syllabus_descriptions[]';
-                descriptionInput.placeholder = 'Syllabus Description';
-                descriptionInput.rows = 5;
-descriptionInput.cols = 70;
-                const removeSyllabusButton = document.createElement('button');
-                removeSyllabusButton.type = 'button';
-                removeSyllabusButton.classList.add('remove-syllabus');
-                removeSyllabusButton.textContent = 'Remove Syllabus';
-                removeSyllabusButton.addEventListener('click', function () {
-                    syllabusProgramsContainer.removeChild(syllabusContainer);
+                @endforeach
+                <button type="button" id="addSyllabus" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300">
+                    Add Syllabus
+                </button>
+            </div>
+            <button type="submit" class="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 focus:outline-none focus:ring focus:border-indigo-300">
+                Update Course
+            </button>
+        </form>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const courseProgramsContainer = document.getElementById('coursePrograms');
+                const addProgramButton = document.getElementById('addProgram');
+                const syllabusProgramsContainer = document.getElementById('syllabusCourses');
+                const addSyllabusButton = document.getElementById('addSyllabus');
+                addSyllabusButton.addEventListener('click', function() {
+                    const syllabusContainer = document.createElement('div');
+                    syllabusContainer.classList.add('program-input');
+                    const titleInput = document.createElement('input');
+                    titleInput.type = 'text';
+                    titleInput.name = 'syllabus_titles[]';
+                    titleInput.placeholder = 'Syllabus Title';
+                    const descriptionInput = document.createElement('textarea');
+                    descriptionInput.name = 'syllabus_descriptions[]';
+                    descriptionInput.placeholder = 'Syllabus Description';
+                    descriptionInput.rows = 5;
+                    descriptionInput.cols = 70;
+                    const removeSyllabusButton = document.createElement('button');
+                    removeSyllabusButton.type = 'button';
+                    removeSyllabusButton.classList.add('remove-syllabus');
+                    removeSyllabusButton.textContent = 'Remove Syllabus';
+                    removeSyllabusButton.addEventListener('click', function() {
+                        syllabusProgramsContainer.removeChild(syllabusContainer);
+                    });
+                    syllabusContainer.appendChild(titleInput);
+                    syllabusContainer.appendChild(descriptionInput);
+                    syllabusContainer.appendChild(removeSyllabusButton);
+                    syllabusProgramsContainer.appendChild(syllabusContainer);
                 });
-                syllabusContainer.appendChild(titleInput);
-                syllabusContainer.appendChild(descriptionInput);
-                syllabusContainer.appendChild(removeSyllabusButton);
-                syllabusProgramsContainer.appendChild(syllabusContainer);
-            });
-            addProgramButton.addEventListener('click', function () {
-                const programInputContainer = document.createElement('div');
-                programInputContainer.classList.add('program-input');
-                const titleInput = document.createElement('input');
-                titleInput.type = 'text';
-                titleInput.name = 'program_titles[]';
-                titleInput.placeholder = 'Program Title';
-                const descriptionInput = document.createElement('textarea');
-                descriptionInput.name = 'program_descriptions[]';
-                descriptionInput.placeholder = 'Program Description';
-                descriptionInput.rows = 5;
-descriptionInput.cols = 70;
-                const iconInput = document.createElement('input');
-                iconInput.type = 'file';
-            iconInput.name = 'program_icons[]';
-            iconInput.accept = 'image/*';
-                const removeProgramButton = document.createElement('button');
-                removeProgramButton.type = 'button';
-                removeProgramButton.classList.add('remove-program');
-                removeProgramButton.textContent = 'Remove Program';
-                removeProgramButton.addEventListener('click', function () {
-                    courseProgramsContainer.removeChild(programInputContainer);
+                addProgramButton.addEventListener('click', function() {
+                    const programInputContainer = document.createElement('div');
+                    programInputContainer.classList.add('program-input');
+                    const titleInput = document.createElement('input');
+                    titleInput.type = 'text';
+                    titleInput.name = 'program_titles[]';
+                    titleInput.placeholder = 'Program Title';
+                    const descriptionInput = document.createElement('textarea');
+                    descriptionInput.name = 'program_descriptions[]';
+                    descriptionInput.placeholder = 'Program Description';
+                    descriptionInput.rows = 5;
+                    descriptionInput.cols = 70;
+                    const iconInput = document.createElement('input');
+                    iconInput.type = 'file';
+                    iconInput.name = 'program_icons[]';
+                    iconInput.accept = 'image/*';
+                    const removeProgramButton = document.createElement('button');
+                    removeProgramButton.type = 'button';
+                    removeProgramButton.classList.add('remove-program');
+                    removeProgramButton.textContent = 'Remove Program';
+                    removeProgramButton.addEventListener('click', function() {
+                        courseProgramsContainer.removeChild(programInputContainer);
+                    });
+                    programInputContainer.appendChild(titleInput);
+                    programInputContainer.appendChild(descriptionInput);
+                    programInputContainer.appendChild(iconInput);
+                    programInputContainer.appendChild(removeProgramButton);
+                    courseProgramsContainer.appendChild(programInputContainer);
                 });
-                programInputContainer.appendChild(titleInput);
-                programInputContainer.appendChild(descriptionInput);
-                programInputContainer.appendChild(iconInput);
-                programInputContainer.appendChild(removeProgramButton);
-                courseProgramsContainer.appendChild(programInputContainer);
+                document.addEventListener('click', function(event) {
+                    if (event.target.classList.contains('remove-program')) {
+                        event.target.parentElement.remove();
+                    } else if (event.target.classList.contains('remove-syllabus')) {
+                        event.target.parentElement.remove();
+                    }
+                });
             });
-            // Event delegation for removing programs and syllabuses
-            document.addEventListener('click', function (event) {
-                if (event.target.classList.contains('remove-program')) {
-                    event.target.parentElement.remove();
-                } else if (event.target.classList.contains('remove-syllabus')) {
-                    event.target.parentElement.remove();
-                }
-            });
-        });
-    </script>
+        </script>
+    </div>
 </body>
 </html>

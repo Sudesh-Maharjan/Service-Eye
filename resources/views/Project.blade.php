@@ -17,10 +17,11 @@
                 outsourcing is just a tool to
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
                 between a client company.</p>
-            <div class=" font-bold text-2xl flex justify-center items-center mb-8 gap-6 flex-col lg:flex-row">
-                <a href="{{ route('project') }}" class="category text-blue-800">All</a>
+                <div class="font-bold text-2xl flex justify-center items-center mb-8 gap-6 flex-col lg:flex-row border-b border-gray-200">
+                <button type="button" onclick="updateActiveTab('{{ route('project') }}', this, event)" class="category inline-block px-4 py-3 rounded-lg">All</button>
                 @foreach ($projectCats as $projectCat)
-                <a href="{{ route('project', $projectCat->id) }}" class="category text-blue-800">{{ $projectCat->project_cat }}</a>
+                    <button type="button" onclick="updateActiveTab('{{ route('project', $projectCat->id) }}', this, event)"
+                            class="category inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">{{ $projectCat->project_cat }}</button>
                 @endforeach
             </div>
         </header>
@@ -36,7 +37,28 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init();
+            restoreActiveTab();
         });
+        function updateActiveTab(route, clickedTab, event) {
+            event.preventDefault();
+            document.querySelectorAll('.category').forEach(tab => {
+                tab.classList.remove('bg-blue-950', 'text-white');
+            });
+            clickedTab.classList.add('bg-blue-950', 'text-white');
+            sessionStorage.setItem('activeTab', route);
+            window.location.href = route;
+        }
+
+        function restoreActiveTab() {
+            // Retrieve the active tab state from sessionStorage
+            const activeTab = sessionStorage.getItem('activeTab');
+            if (activeTab) {
+                const activeButton = document.querySelector(`[onclick*="${activeTab}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('bg-blue-950', 'text-white');
+                }
+            }
+        }
     </script>
 </body>
 </html>

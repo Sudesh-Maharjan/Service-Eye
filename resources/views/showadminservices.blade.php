@@ -42,7 +42,6 @@
     <th scope="col" class="thclass">Icon</th>
     <th scope="col" class="thclass">Description</th>
     <th scope="col" class="thclass">Action</th>
-
     </tr>
     </thead>
     <tbody>

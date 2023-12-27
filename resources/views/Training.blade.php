@@ -37,15 +37,16 @@
       </div>
    </div>
    <!-- tailwind tabs -->
-   <div class="mt-12 mb-4 border-black text-white mx-40 rounded-t-lg">
-    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 bg-black text-white"  onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
-        </li>
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 bg-black  text-white" onclick="showTab('syllabus')" id="syllabus-tab" data-tabs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</button>
-        </li>
-    </ul>
+   <div class="mt-12 mb-4 border-black text-white mx-36 rounded-t-lg">
+   <ul class="flex flex-wrap -mb-px text-sm font-medium text-center bg-gray-200 rounded-md" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+    <li class="me-2 border-2 rounded-t-md" role="presentation">
+        <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 text-black hover:text-white font-bold" onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
+    </li>
+    <li class="me-2 border-2 rounded-t-md" role="presentation">
+        <button class="inline-block p-4 border-b-2 hover:text-white rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 font-bold text-black" onclick="showTab('syllabus')" id="syllabus-tab" data-tabs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</button>
+    </li>
+</ul>
+
 </div>
 <div id="default-tab-content">
     <div class="hidden p-4 rounded-lg " id="course" role="tabpanel" aria-labelledby="profile-tab">
@@ -54,18 +55,19 @@
          />
    </div>
     </div>
-    <div class="hidden p-4 rounded-lg" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
+    <div class="hidden px-4 rounded-lg" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="" id=syllabus>
-      <x-heading heading="Syllabus" />
    </div>
-   <div class="flex flex-col items-center m-10" data-aos="flip-up" data-aos-duration="2000">
+   <div class="flex flex-col items-start m-10 mx-32" data-aos="flip-up" data-aos-duration="2000">
    @foreach($courses->syllabuses as $syllabus)
    <x-accordion titleaccordion="{!!$syllabus->title!!}" titledescription="{{$syllabus->description}}" />
    @endforeach
    </div>
     </div>
 </div>
+<div class="flex justify-start">
    <x-heading heading="Similar Programs For You" />
+   </div>
    <div class="mx-32" data-aos="flip-up">
       <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       @foreach($similiarcourse as $course)
@@ -88,6 +90,25 @@ document.getElementById("course-tab").click();
                 // animateNumbers();
             });
             function showTab(tabId) {
+               document.querySelectorAll('[role="tabpanel"]').forEach(tabPanel => {
+            tabPanel.classList.add('hidden');
+        });
+        document.querySelectorAll('[role="tab"]').forEach(tab => {
+            tab.classList.remove('bg-black', 'text-white', 'border-black');
+            tab.setAttribute('aria-selected', 'false');
+        });
+         // Show the selected tab
+         const selectedTab = document.getElementById(tabId);
+        if (selectedTab) {
+            selectedTab.classList.remove('hidden');
+        }
+
+        // Add active styles to the clicked tab
+        const activeTab = document.querySelector(`[data-tabs-target="#${tabId}"]`);
+        if (activeTab) {
+            activeTab.classList.add('bg-black', 'text-white', 'border-black');
+            activeTab.setAttribute('aria-selected', 'true');
+        }
         // Hide all tab contents
         const tabContents = document.querySelectorAll('[role="tabpanel"]');
         tabContents.forEach((content) => {

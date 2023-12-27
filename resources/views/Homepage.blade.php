@@ -29,11 +29,11 @@
     </div>
     <div class="flex flex-col xl:flex-row justify-center items-center mt-10 w-auto">
         <div class="p-2 m-2 flex justify-center w-auto" data-aos="fade-left" data-aos-duration="1500">
-            <div class=" w-auto md:w-[450px] p-3 my-2 mx-10 ">
+            <div class=" w-auto md:w-[430px] p-3 my-2">
                 <h1 class="text-3xl font-bold text-blue-950">Our Services</h1>
                 <h1 class="text-3xl font-bold mt-5"><span class="text-blue-950">IT</span> Services and <br>the <span
                         class="text-blue-950">Future</span></h1>
-                <p class="text-md font-bold mt-10">Our IT Services are designed to adapt the ever-changing digital
+                <p class="text-md font-bold mt-5">Our IT Services are designed to adapt the ever-changing digital
                     landscape. We provide decentralized, open-source solutions that are fast, reliable and accessible to
                     everyone. Experience the power of Web3 applications with us.</p>
                 <button class="mt-7 shadow-lg  text-white p-3 rounded-lg  bg-blue-950 font-bold hover:bg-blue-800 ">View
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="mx-24 mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
+    <div class="mx-36 mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
         <x-heading heading="Our Projects" />
         <div class="flex flex-wrap justify-center">
             @foreach($portfolio as $p)
@@ -60,15 +60,15 @@
     </div>
 
 
-    <div class="mx-24 shadow-xl mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
+    <div class="mx-36 shadow-xl mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
         <x-getintouch />
     </div>
-    <div class="mt-10 mx-24">
+    <div class="mt-10 mx-36">
         <div class="">
             <x-conecttheapps />
         </div>
     </div>
-    <div class="mt-4 font-bold text-xl text-center">
+    <div class="mt-4 mx-36 font-bold text-xl text-center">
         <x-heading heading="Our Core Products" />
         <p>"Revolutions your workflow with our cutting edge IT product, seamlessly integrating innovative technology
             <br>
@@ -77,7 +77,7 @@
                 <img src="{{url('Images/Vector (2).png')}}" alt="leftarrow"> -->
         </p>
     </div>
-    <div class="flex xs:flex-col mdl:flex-row  justify-center items-center gap-10 m-10">
+    <div class="flex xs:flex-col mdl:flex-row  justify-center items-center gap-10 my-10 mx-36">
         @foreach($projects as $project)
         <a href="{{$project->url}} " target="_blank"><x-coreproducts coreproducts="{{$project->name}}"
                 image="{{asset('uploads')}}/{{$project->image}}" url="{{$project->url}}" />
@@ -85,10 +85,10 @@
     </div>
     @if(count ($clients) > 0)
     <x-heading heading="Our Clients" />
-    <p class="text-xl text-center m-5 font-bold">We take pride in serving a wide range of clients, from small local
+    <p class="text-xl text-center font-bold mb-5 mx-36">We take pride in serving a wide range of clients, from small local
         banks to
         large international financial institutions. </p>
-    <div class="grid grid-cols-5 px-20 items-center justify-center">
+    <div class="grid grid-cols-5 px-20 items-center justify-center mx-36">
         @foreach($clients as $client)
         <a href="{{$client->url}}" target="_blank"><x-ourclient imageclient="{{asset('uploads')}}/{{$client->image}}" />
         </a>
