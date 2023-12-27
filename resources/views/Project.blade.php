@@ -17,11 +17,11 @@
                 outsourcing is just a tool to
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
                 between a client company.</p>
-                <div class="font-bold text-2xl flex justify-center items-center mb-8 gap-6 flex-col lg:flex-row border-b border-gray-200">
-                <button type="button" onclick="updateActiveTab('{{ route('project') }}', this, event)" class="category inline-block px-4 py-3 rounded-lg">All</button>
+                <div class="font-bold text-xlflex justify-center items-center mb-8 gap-6 flex-col lg:flex-row border-2 rounded-md border-gray-300">
+                <button type="button" onclick="updateActiveTab('{{ route('project') }}', this, event)" class="category inline-block px-4 py-3  hover:text-blue-900 ">All</button>
                 @foreach ($projectCats as $projectCat)
                     <button type="button" onclick="updateActiveTab('{{ route('project', $projectCat->id) }}', this, event)"
-                            class="category inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">{{ $projectCat->project_cat }}</button>
+                            class="category inline-block px-4 py-3 hover:text-blue-900 hover:bg-gray-100 dark:hover:bg-blue-800 dark:hover:text-white">{{ $projectCat->project_cat }}</button>
                 @endforeach
             </div>
         </header>

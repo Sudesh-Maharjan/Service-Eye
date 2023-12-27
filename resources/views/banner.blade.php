@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tailwind CSS Demo</title>
+    <title>Blog</title>
    @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('css/banner.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />

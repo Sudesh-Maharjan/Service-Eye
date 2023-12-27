@@ -6,10 +6,10 @@
     <title>Contact Us</title>
     @vite('resources/css/app.css')
 </head>
-<body>
+<body class="">
     <x-header />
-    <div class=" p-10 ">
-        <div class="title">
+    <div class=" p-10">
+        <div class="title mx-36">
         <x-heading heading="Contact Us" />
 
             <div class="text-center text-slate-700 font-bold leading-7 mb-2 md:mb-10 text-xl">
@@ -54,10 +54,10 @@
                 </form>
             </div>
             <div class="w-full md:w-3/5 lg:w-2/6 h-[630px]">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8049843454905!2d85.3329713755604!3d27.692421676191053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19d6b8d98047%3A0xfe0592f8cbca59d0!2sService%20Eye%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1695184491044!5m2!1sen!2snp" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d220.8001233279225!2d85.33541125552483!3d27.69251472222412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQxJzMzLjIiTiA4NcKwMjAnMDcuNyJF!5e0!3m2!1sen!2snp!4v1703663143527!5m2!1sen!2snp" width="550" height="630" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        <div class=" flex flex-col md:flex-row justify-between items-center mt-6 md:mt-10 bg-slate-700 bg-opacity-95 rounded-3xl px-4 md:px-28 py-4 md:h-80  ">
+        <div class=" flex flex-col md:flex-row justify-between items-center mt-6 md:mt-10 bg-slate-700 bg-opacity-95 rounded-3xl px-4 md:px-28 py-4 md:h-80  md:mx-32">
             <ul class="mb-4">
                 <li class=" text-white text-3xl font-bold  mb-4">Call Us
                 </li>

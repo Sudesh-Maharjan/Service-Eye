@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Course</title>
     <script src="https://cdn.ckeditor.com/4.17.0/standard/ckeditor.js"></script>
+    <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
+
     @vite('resources/css/app.css')
 </head>
 <style>
@@ -42,12 +44,20 @@
     <div class="w-2/12">
         @include('admin.layout.sidebar')
     </div>
-    <div class=" w-10/12 container mx-auto p-8 max-w-xl">
-        <h1 class="text-2xl font-bold mb-4">Create Course</h1>
+    
+    <div class=" w-10/12 container mx-auto p-8 max-w-xl ">
+        <h1 class="text-4xl font-bold mb-4">Courses</h1>
         <div className="flex justify-center flex-auto p-14 md:p-4">
-            <form action="{{ route('courses.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('courses.store') }}" method="post" enctype="multipart/form-data" class="bg-white p-5 rounded-md w-[750px]">
                 @csrf
-                <div className="flex flex-wrap justify-center">
+                <div className="flex flex-wrap justify-center ">
+                <div class="flex flex-col">
+                <a href="{{redirect()->back()}}" class="flex">
+                    <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
+                </a>
+                </div>
+        <h1 class="text-2xl font-bold mb-4 my-3">Add Course</h1>
+
                     <div class="">
                         <div class="mb-4">
                             <label for="name" class="block text-sm font-medium text-gray-600">Course Name:</label>
@@ -91,20 +101,23 @@
                         <div id="coursePrograms" class="mb-4">
                             <label for="name" class="block text-sm font-medium text-gray-600">Add Program:</label>
                         </div>
-                        <button type="button" id="addProgram" class="px-4 py-2  bg-green-500 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-blue-300">
+                        <button type="button" id="addProgram" class="addbutton">
                             Add Program
                         </button>
                         <!-- Dynamic syllabus fields -->
                         <div id="syllabusCourses" class="mb-4">
                             <label for="name" class="block text-sm font-medium text-gray-60 mt-4">Add Syllabus:</label>
                         </div>
-                        <button type="button" id="addSyllabus" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300">
+                        <button type="button" id="addSyllabus" class="addbutton">
                             Add Syllabus
                         </button>
                         <div class="mb-4">
                         </div>
-                        <button type="submit" class="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 focus:outline-none focus:ring focus:border-indigo-300">
+                        <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                             Create Course
+
+                            </span>
                         </button>
                     </div>
                 </div>

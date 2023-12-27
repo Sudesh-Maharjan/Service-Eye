@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update Courses </title>
     <script src="https://cdn.ckeditor.com/4.17.0/standard/ckeditor.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
+
 </head>
 <style>
     body {
@@ -63,9 +65,16 @@
     <div class="w-2/12">
         @include('admin.layout.sidebar')
     </div>
-    <div class=" w-10/12 container mx-auto p-8 max-w-xl">
-        <form action="{{ route('courses.update', $course->id) }}" method="post" enctype="multipart/form-data" class="grid gap-4">
-            <h1 class="text-2xl font-bold mb-4">Create Course</h1>
+    <div class=" container mx-auto px-8 max-w-4xl">
+        <h1 class="text-4xl font-bold my-3">Courses</h1>
+        <form action="{{ route('courses.update', $course->id) }}" method="post" enctype="multipart/form-data" class=" ">
+            <div class="bg-white p-5 rounded-md">
+        <div class="flex flex-col">
+            <a href="{{redirect()->back()}}" class="flex">
+                <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            </div>
+            <h1 class="text-2xl font-bold my-4">Update Course</h1>
             @csrf
             <input type="hidden" name="course_id" value="{{ $course->id }}">
             <input type="hidden" name="old_image" value="{{ $course->image }}">
@@ -146,9 +155,10 @@
                     Add Syllabus
                 </button>
             </div>
-            <button type="submit" class="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 focus:outline-none focus:ring focus:border-indigo-300">
-                Update Course
+            <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Update Course</span>  
             </button>
+            </div>
         </form>
         <script>
             document.addEventListener('DOMContentLoaded', function() {

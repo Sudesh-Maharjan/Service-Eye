@@ -13,7 +13,7 @@
    <x-header />
    <x-trainingbanner title="{{$courses->name}}" shortdescription="{{ $courses->short_description }}" description="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN (MongoDB, Express.js, React, Node.js), Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape."/>
    <div class="mx-auto -mt-28">
-      <div class="flex flex-wrap justify-center gap-28 mt-10" data-aos="flip-up" data-aos-duration="1500">
+      <div class="flex flex-wrap justify-center xs:gap-7 md:gap-28 mt-10" data-aos="flip-up" data-aos-duration="1500">
        <x-traininginfocard title="Batch Start Date" date="{!!$courses->Batchstartdate!!}" data-aos-duration="4000" />
        <x-traininginfocard title="Course Duration" date="{!!$courses->courseDuration!!}" data-aos-duration="4000" />
        <x-traininginfocard title="Number of seats" date="{!!$courses->numberseats!!}" data-aos-duration="4000" />
@@ -68,8 +68,8 @@
 <div class="flex justify-start">
    <x-heading heading="Similar Programs For You" />
    </div>
-   <div class="mx-32" data-aos="flip-up">
-      <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+   <div class="" data-aos="flip-up">
+      <div class="grid xs:grid-cols-1 mdl:grid-cols-2 lg:grid-cols-3 xs:mx-0 md:mx-36">
       @foreach($similiarcourse as $course)
          <x-trainingcardraj coursename="{{$course->name}}" coursedescription="{{ $course->short_description }}" months="{{$course->courseDuration}}"
             image="{{asset('uploads')}}/{{$course->image}}" a="{{route('course.inside',$course->id)}}" />

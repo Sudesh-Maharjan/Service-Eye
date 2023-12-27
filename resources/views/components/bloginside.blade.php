@@ -1,5 +1,5 @@
-<div class="bloginside-title">{{$blogtitle}}</div>
-        <div class="container-fluid mx-36">
+<div class="container-fluid mx-36">
+            <div class="bloginside-title">{{$blogtitle}}</div>
         <hr>
         
 <div class="blog-detail-page">
@@ -18,7 +18,7 @@
                         </div>
                         <div class="bloginside-description">
                             
-                            <p>{{$blogdescription}} </p>
+                            <p class="m-5">{{$blogdescription}} </p>
                         </div>
                       
                     </div>

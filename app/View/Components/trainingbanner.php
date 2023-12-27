@@ -8,12 +8,18 @@ use Illuminate\Contracts\View\View;
 
 class trainingbanner extends Component
 {
+
+    public $title;
+public $shortdescription;
+public $description;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($title,$description,$shortdescription)
     {
-        //
+        $this->title = $title;
+        $this->description=$description;
+        $this->shortdescription=$shortdescription;
     }
 
     /**

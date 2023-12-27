@@ -9,7 +9,7 @@
     <title>Edit Team</title>
     <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
 </head>
-<body class="">
+<body class="bg-gray-100">
 @include('admin.layout.sidebar')
 
 
@@ -17,12 +17,12 @@
     @csrf
     <!-- Add other fields as needed -->
     <div class="flex shadow-lg rounded-lg p-5 gap-20 justify-center ml-72 ">
-        <div class="flex flex-col">
-        <a href="{{redirect()->back()}}" class="flex">
-            <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
-        </a>
-        </div>
-        <div class="">
+        <div class="bg-white p-5 rounded-md shadow-md">
+            <div class="flex flex-col">
+            <a href="{{redirect()->back()}}" class="flex">
+                <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            </div>
     <h1 class="text-4xl font-bold my-2 text-start">Team</h1>
 
         <h1 class="text-2xl font-bold my-2">Update Team</h1>
@@ -112,10 +112,36 @@
             urlInput.type = 'text';
             urlInput.name = 'urls[]';
             urlInput.placeholder = 'https://new-url.com';
+            urlInput.classList.add('p-2', 'w-[350px]', 'rounded-md', 'border-2');
 
             const removeUrlButton = document.createElement('button');
             removeUrlButton.type = 'button';
-            removeUrlButton.classList.add('remove-url');
+            removeUrlButton.classList.add(
+                'remove-url',
+                'inline-flex',
+                'items-center',
+                'justify-center',
+                'p-3',
+                'mb-2',
+                'me-2',
+                'overflow-hidden',
+                'text-lg',
+                'font-medium',
+                'text-gray-900',
+                'rounded-lg',
+                'group',
+                'bg-gradient-to-br',
+                'from-pink-500',
+                'to-orange-400',
+                'group-hover:from-pink-500',
+                'group-hover:to-orange-400',
+                'hover:text-white',
+                'dark:text-white',
+                'focus:ring-4',
+                'focus:outline-none',
+                'focus:ring-pink-200',
+                'dark:focus:ring-pink-800'
+            );
             removeUrlButton.textContent = '-';
 
             removeUrlButton.addEventListener('click', function() {
@@ -127,6 +153,11 @@
             urlsContainer.appendChild(urlInputContainer);
         });
 
+        urlsContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('remove-url')) {
+                event.target.closest('.url-input').remove();
+            }
+        });
         const cancelBtn = document.getElementById('cancel-button');
 
         if (cancelBtn) {
