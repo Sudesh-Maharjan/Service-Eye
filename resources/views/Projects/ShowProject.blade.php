@@ -18,7 +18,7 @@
 @endif
 
 
-<div class="ml-56">
+<div class="ml-10">
     <h1 class="text-4xl font-bold m-4">Projects</h1>
     <a href="{{route('project.create')}}"  class="addbutton">Add Projects </a>
     @if(count($teams) > 0)
@@ -40,7 +40,7 @@
                     <td class="tdclass">{{ $team->url }}</td>
                     <td class="tdclass">
                         @if($team->image)
-                            <img src="{{ asset('uploads/' . $team->image) }}" alt="Team Image" style="max-width: 100px;">
+                            <img src="{{ asset('uploads/' . $team->image) }}" alt="Team Image" style="width: 200px; height: 200px">
                         @else
                             No Image
                         @endif

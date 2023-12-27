@@ -24,12 +24,10 @@
     <div class="flex-1 flex flex-col overflow-hidden">
 
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200 dark:bg-gray-800">
-            
-            
             <div class="px-64">
-                <div class="mx-20 ml- flex flex-col items-start justify-center ml-24">
+                <div class="mx-20  flex flex-col items-start justify-center">
                     <div class="">
-                    <h1 class="text-4xl font-bold text-start m-3 ">Teams</h1>
+                    <h1 class="text-4xl font-bold text-start mt-3 ml-3 ">Teams</h1>
                     <a href="{{route('team.create')}}"
                          type="button"
                             class="addbutton">
@@ -42,7 +40,7 @@
             </div>
             @if(count($teams) > 0)
             <table border="1" cellspacing="0"
-                class=" ml-28  min-w-full leading-normal">
+                class=" ml-20  min-w-full leading-normal">
                 <thead
                     class=" ">
                     <tr>

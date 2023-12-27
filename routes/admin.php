@@ -32,7 +32,7 @@ Route::get("/deletetraining/{id}",[TrainingController::class,"deletetraining"])-
 Route::get("/addcourse",[CourseController::class,"create"])->name("courses.create");
 Route::post("/storecourse",[CourseController::class,"store"])->name("courses.store");
 
-// Team
+//Team
 Route::get('/teams/create', [TeamController::class, 'create'])->name('team.create');
 Route::post('/teams/store', [TeamController::class, 'store'])->name('team.store');
 Route::get('/teams', [TeamController::class,'show'])->name('teams.show');
@@ -40,14 +40,14 @@ Route::get('/teams', [TeamController::class,'show'])->name('teams.show');
 Route::get('/teams/edit/{id}',[TeamController::class,'edit'])->name('teams.edit');
 Route::post('/teams/{id}',[TeamController::class,'update'] )->name('teams.update');
 Route::get('/teams/delete/{id}',[TeamController::class,'delete'] )->name('teams.delete');
-// project
+//project
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('project.create');
 Route::post('/projects/store', [ProjectController::class, 'store'])->name('project.store');
 Route::get('/projects', [ProjectController::class,'show'])->name('project.show');
 Route::get('/projects/edit/{id}',[ProjectController::class,'edit'])->name('project.edit');
 Route::post('/projects/update/{id}',[ProjectController::class,'update'])->name('project.update');
 Route::get('/projects/delete/{id}',[ProjectController::class,'delete'])->name('project.delete');
-// client
+//client
 Route::get('/client/create', [ClientController::class, 'create'])->name('client.create');
 Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
 Route::get('/client/show', [ClientController::class, 'show'])->name('client.show');
@@ -55,9 +55,11 @@ Route::get('/clients/{id}/edit',[ClientController::class, 'edit'])->name('client
 Route::post('/clients/{id}', [ClientController::class, 'update'])->name('clients.update');
 Route::get('/clients/{id}', [ClientController::class, 'destroy'])->name('clients.destroy');
 
+//courses
 Route::get('courses/edit/{id}', [CourseController::class, 'edit'])->name('courses.edit');
 Route::post('courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::get('/courses', [CourseController::class, 'adminshow'])->name('courses.show');
+Route::get('/courses/delete/{id}', [CourseController::class, 'destroy'])->name('courses.delete');
 
 Route::get('/project-cat', [ProjectCatController::class, 'project_cat'])->name('project-cat.project_cat');
 Route::post('/project-cat/store', [ProjectCatController::class, 'store'])->name('project-cat.store');

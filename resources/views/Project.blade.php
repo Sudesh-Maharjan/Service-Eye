@@ -18,9 +18,9 @@
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
                 between a client company.</p>
             <div class=" font-bold text-2xl flex justify-center items-center mb-8 gap-6 flex-col lg:flex-row">
-                <a href="{{ route('project') }}" class="category themecolor">All</a>
+                <a href="{{ route('project') }}" class="category text-blue-800">All</a>
                 @foreach ($projectCats as $projectCat)
-                <a href="{{ route('project', $projectCat->id) }}" class="category themecolor">{{ $projectCat->project_cat }}</a>
+                <a href="{{ route('project', $projectCat->id) }}" class="category text-blue-800">{{ $projectCat->project_cat }}</a>
                 @endforeach
             </div>
         </header>

@@ -10,7 +10,7 @@
    <x-header/>
    <!-- service banner start -->
    <div class="grid xs:grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xs:mx-10 md:mx-28 justify-center " data-aos="zoom-out-right" data-aos-duration="1500">
-      <div class="w-auto flex justify-center flex-col items-center">
+      <div class="w-auto flex justify-center flex-col items-left">
          <h1 class="text-5xl text-left m-2 font-bold flex ">IT Consulting Services <br>
             For Your </h1>
          <p class="mt-2 md:mt-5 m-2 font-bold ">We are leading technology solutions providing company all over the world doing

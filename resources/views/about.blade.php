@@ -192,8 +192,11 @@ Overall, Service Eye is not just a technology provider but a visionary in the te
     </div>
 
 
-
-
+<div class="p-16">
+    <x-getintouch/>
+    </div>
+    <x-subscribe/>
+<x-footer/>
     
 <script>
     const images = [
@@ -235,6 +238,6 @@ Overall, Service Eye is not just a technology provider but a visionary in the te
 
 setInterval(rotateImages, 2000); 
 </script>
-<x-footer/>
+
 </body>
 </html>

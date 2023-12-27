@@ -29,10 +29,9 @@ class CourseController extends Controller
     public function usershowinside($id)
     {
         $courses = Course::with('programs', 'syllabuses')->find($id);
-
-        return view('Training', compact('courses'));
+        $similiarcourse = Course::with('programs', 'syllabuses')->take(3)->get();
+        return view('Training', compact('courses','similiarcourse'));
     }
-
     public function store(Request $request)
    
     {
@@ -104,7 +103,7 @@ class CourseController extends Controller
 
 
         // Redirect or return response as needed
-        return redirect()->route('courses.create')->with('success', 'Course created successfully!');
+        return redirect()->route('courses.show')->with('success', 'Course created successfully!');
     }
     public function edit($id)
     {
@@ -246,8 +245,15 @@ class CourseController extends Controller
         SyllabusCourse::destroy($removedSyllabusIds);
     
         // Redirect or return response as needed
-        return redirect()->back()->with('success', 'Course updated successfully!');
+        session()->flash("message", "Course updated successfully");
+        return redirect()->route('courses.show');
     }
-    
+    public function destroy($id)
+    {
+        $course = Course::findOrFail($id);
+        $course->delete();
+        session()->flash("message", "Course deleted successfully");
+        return redirect()->route('courses.show');
+    }
     
 }

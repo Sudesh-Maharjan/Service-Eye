@@ -11,13 +11,12 @@
 </head>
 <body>
    <x-header />
-   <x-trainingbanner />
+   <x-trainingbanner title="{{$courses->name}}" shortdescription="{{ $courses->short_description }}" description="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN (MongoDB, Express.js, React, Node.js), Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape."/>
    <div class="mx-auto -mt-28">
-      <h1 class="text-black">Syllabus</h1>
       <div class="flex flex-wrap justify-center gap-28 mt-10" data-aos="flip-up" data-aos-duration="1500">
-         @for ($i = 0; $i
-         < 3; $i++) <x-traininginfocard title="Batch Start Date" date="Jan. 24 2023" data-aos-duration="4000" />
-         @endfor
+       <x-traininginfocard title="Batch Start Date" date="{!!$courses->Batchstartdate!!}" data-aos-duration="4000" />
+       <x-traininginfocard title="Course Duration" date="{!!$courses->courseDuration!!}" data-aos-duration="4000" />
+       <x-traininginfocard title="Number of seats" date="{!!$courses->numberseats!!}" data-aos-duration="4000" />
       </div>
    </div>
    <div class="mx-auto mt-10">
@@ -31,52 +30,48 @@
       </div>
       <div class="flex flex-wrap justify-center gap-40 mt-10" data-aos="flip-up" data-aos-duration="1500">
       @foreach($courses->programs as $program)
-
 <x-trainingcard w1="{{$program->title}}" w2="World"
    desc="{{$program->description}}"
    tcimg="{{asset('uploads')}}/{{$program->icon}}" />
 @endforeach
-        
       </div>
    </div>
    <!-- tailwind tabs -->
-   <div class="mt-12 mb-4 border-black text-white shadow-lg rounded-xl                                                                                                                                                                                                                 dark:border-gray-700 mx-40 rounded-t-lg">
+   <div class="mt-12 mb-4 border-black text-white mx-40 rounded-t-lg">
     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
         <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 hover:bg-gray-700 bg-black text-white"  onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
+            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 bg-black text-white"  onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
         </li>
         <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300  hover:bg-gray-700 bg-black text-gray-300" onclick="showTab('syllabus')" id="syllabus-tab" data-tabs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</button>
+            <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 bg-black  text-white" onclick="showTab('syllabus')" id="syllabus-tab" data-tabs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</button>
         </li>
     </ul>
 </div>
 <div id="default-tab-content">
-    <div class="hidden p-4 rounded-lg  dark:bg-gray-800" id="course" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="hidden p-4 rounded-lg " id="course" role="tabpanel" aria-labelledby="profile-tab">
     <div class="" data-aos="flip-up" data-aos-duration="1000" id="des">
-      <x-description titleone="Description" titletwo='{!!$courses->description!!}'
+      <x-description titleone="Description" titletwo='{!!htmlspecialchars_decode($courses->description)!!}'
          />
    </div>
     </div>
-    <div class="hidden p-4 rounded-lg dark:bg-gray-800" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
+    <div class="hidden p-4 rounded-lg" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="" id=syllabus>
       <x-heading heading="Syllabus" />
    </div>
    <div class="flex flex-col items-center m-10" data-aos="flip-up" data-aos-duration="2000">
    @foreach($courses->syllabuses as $syllabus)
-   <x-accordion titleaccordion="{!!$syllabus->title!!}" titledescription="{!!$syllabus->description!!}" />
-
-
+   <x-accordion titleaccordion="{!!$syllabus->title!!}" titledescription="{{$syllabus->description}}" />
    @endforeach
-
    </div>
     </div>
 </div>
-   <!-- tailwind tabs -->
    <x-heading heading="Similar Programs For You" />
    <div class="mx-32" data-aos="flip-up">
       <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-         <!-- Include your Tailwind CSS components here -->
-       
+      @foreach($similiarcourse as $course)
+         <x-trainingcardraj coursename="{{$course->name}}" coursedescription="{{ $course->short_description }}" months="{{$course->courseDuration}}"
+            image="{{asset('uploads')}}/{{$course->image}}" a="{{route('course.inside',$course->id)}}" />
+      @endforeach
       </div>
    </div>
    </div>
@@ -88,7 +83,7 @@
     var maxWidth = 1200;
     return window.innerWidth < maxWidth;
   }
-}); 
+});
 document.getElementById("course-tab").click();
                 // animateNumbers();
             });

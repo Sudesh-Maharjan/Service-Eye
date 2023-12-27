@@ -5,17 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog Post</title>
+    @vite('resources/css/app.css')
     <!-- Include Tailwind CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
+
 </head>
+@include('admin.layout.sidebar')
+<body class="bg-gray-100 h-screen flex flex-col items-center justify-center">
+    <div class="ml-72">
+<h1 class="text-4xl font-bold text-start my-3">Blogs</h1>
 
-<body class="bg-gray-100 h-screen flex items-center justify-center">
-
-    <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
-
-        <h2 class="text-2xl font-semibold mb-4">{{$title}}</h2>
+    <div class="bg-white p-8 rounded shadow-md w-[750px]">
+    <div class="flex flex-col">
+                    <a href="{{redirect()->back()}}" class="flex">
+                        <button onclick="history.back()" class="bg-black text-white p-2 rounded-full h-11 flex justify-center items-center w-11"><i class="fa-solid fa-arrow-left"></i></button>
+                    </a>
+                    </div>
+        <h2 class="text-2xl font-semibold my-4">{{$title}}</h2>
 
         <form action="{{$url}}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -39,8 +46,8 @@
                 class="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-500">
 
             <button type="submit"
-                class="mt-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">
-                Submit
+                class="mt-10 deleterelative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+              <span class=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Submit</span>
             </button>
         </form>
     </div>
@@ -58,7 +65,7 @@
     document.getElementById('description').style.height = quill.root.scrollHeight + 'px';
 });
 </script>
-
+</div>
 </body>
 
 </html>

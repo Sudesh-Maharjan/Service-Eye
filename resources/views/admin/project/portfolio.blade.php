@@ -11,10 +11,10 @@
 <div class="w-2/12">
 @include('admin.layout.sidebar')
 </div>
-<div class="w-10/12 flex p-4">
+<div class="w-10/12 flex">
     <div class="container mx-auto p-4 flex flex-col justify-end">
 
-        <h1 class="text-4xl font-bold mb-4">Portfolio</h1>
+        <h1 class="text-4xl font-bold mx-5">Portfolio</h1>
         <!-- <h2 class="text-xl font-bold mb-4">Add Project</h2> -->
         <div class="">
 

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
    @vite('resources/css/app.css')
    <meta charset="UTF-8">
@@ -10,16 +8,14 @@
    <title>Training</title>
    <link rel="stylesheet" href="{{ asset('css/trainingcard.css') }}">
 </head>
-
 <body>
    <x-header />
-   <x-trainingbanner />
+   <x-trainingbanner title="Training" shortdescription="Learn from here" description="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN (MongoDB, Express.js, React, Node.js), Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape."/>
    <div class="text-center text-2xl my-10"><span class="font-bold">Become a pro with our</span> Development Courses</div>
-  
    <div class="" data-aos="flip-up">
       <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container flex justify-center mx-auto">
       @foreach($courses as $course)
-         <x-trainingcardraj coursename="{{$course->name}}" coursedescription="{{ $course->description }}" months="{{$course->courseDuration}}"
+          <x-trainingcardraj coursename="{{$course->name}}" coursedescription="{{ $course->short_description }}" months="{{$course->courseDuration}}"
             image="{{asset('uploads')}}/{{$course->image}}" a="{{route('course.inside',$course->id)}}" />
       @endforeach
       </div>
@@ -55,5 +51,4 @@
       //  end scroll on click
    </script>
 </body>
-
 </html>
