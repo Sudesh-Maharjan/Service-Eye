@@ -11,9 +11,22 @@ class teamcard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $name;
+    public $position;
+    public $qoute;
+    public $timg;
+    public $jobdes;
+    public $interest;
+    public $url;
+    public function __construct($name, $position, $qoute, $timg, $jobdes, $interest, $url)
     {
-        //
+        $this->name = $name;
+        $this->position = $position;
+        $this->qoute = $qoute;
+        $this->timg = $timg;
+        $this->jobdes = $jobdes;
+        $this->interest = $interest;
+        $this->url = $url;
     }
 
     /**

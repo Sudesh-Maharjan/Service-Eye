@@ -38,7 +38,7 @@
                     everyone. Experience the power of Web3 applications with us.</p>
                 <button class="mt-7 shadow-lg  text-white p-3 rounded-lg  bg-blue-950 font-bold hover:bg-blue-800 ">View
                     More
-                    Services</button>
+                    </button>
             </div>
         </div>
 
