@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TeamController;
@@ -14,8 +15,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-
-Route::get('/addservice',  [ServicesController::class, 'addservices'])->name('addservices');
+Route::middleware('auth')->group(function () {
+   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+   Route::get('/addservice',  [ServicesController::class, 'addservices'])->name('addservices');
 Route::post('/storeservices',  [ServicesController::class, 'storeservices'])->name('storeservices');
 Route::get('/showservices',  [ServicesController::class, 'adminservicesshow'])->name('showadminservices');
 Route::get('/editservices/{id}',  [ServicesController::class, 'adminservicesedit'])->name('adminservicesedit');
@@ -85,3 +89,7 @@ Route::get("/editaProject/{id}", [PortfolioController::class, 'editaProject'])->
 //Contact Us
 Route::get("/showcontactus",[ContactController::class,'show_contactus'])->name("showcontactus");
 Route::get("/deleteshowcontactus/{id}",[ContactController::class,'desletecontact'])->name("deleteshowcontactus");
+});
+
+require __DIR__.'/auth.php';
+

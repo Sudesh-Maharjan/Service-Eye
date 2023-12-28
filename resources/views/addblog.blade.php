@@ -7,6 +7,8 @@
     <title>Add Blog Post</title>
     @vite('resources/css/app.css')
     <!-- Include Tailwind CSS -->
+    <script src="https://cdn.ckeditor.com/4.17.0/standard/ckeditor.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
 
@@ -36,8 +38,8 @@
             <input type="text" id="title" name="title" value="{{$blogs->title}}" required
                 class="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-500">
 
-                <label for="description" class="block text-sm font-medium text-gray-600 mt-4">Description</label>
-<div id="editor-container" class="mt-1 border rounded focus:outline-none focus:border-blue-500"></div>
+                <label for="description"  class="block text-sm font-medium text-gray-600 mt-4">Description</label>
+<div id="editor-container"  class="mt-1 border rounded focus:outline-none focus:border-blue-500"></div>
 <textarea id="description" value="{{$blogs->description}}" name="description" style="display: none; height: 200px;"></textarea>
 
 
@@ -46,24 +48,19 @@
                 class="mt-1 p-2 w-full border rounded focus:outline-none focus:border-blue-500">
 
             <button type="submit"
-                class="mt-10 deleterelative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-              <span class=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Submit</span>
+                class="mt-10 deleterelative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
+              <span class=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">Submit</span>
             </button>
         </form>
     </div>
     <script>
-    var quill = new Quill('#editor-container', {
-        theme: 'snow',
-        placeholder: '',
-        html: '{{$blogs->description}}'
-    });
+   document.addEventListener('DOMContentLoaded', function() {
 
-    quill.on('text-change', function () {
-    document.getElementById('description').value = quill.root.innerHTML;
-
-   
-    document.getElementById('description').style.height = quill.root.scrollHeight + 'px';
-});
+    CKEDITOR.replace('description', {
+            allowedContent: true, 
+        });
+    CKEDITOR.instances['description'].setData(`{!! $blogs->description !!}`);
+   })
 </script>
 </div>
 </body>

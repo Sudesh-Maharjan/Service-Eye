@@ -17,7 +17,7 @@
 
     <div class="container mx-auto justify-center">
        
-    <x-bloginside blogtitle="{{$blogs->title}}" update="{{$blogs->updated_at}}" image="{{asset('uploads')}}/{{$blogs->image}}" blogdescription="{{$blogs->description}}" />
+    <x-bloginside blogtitle="{{$blogs->title}}" update="{{$blogs->updated_at}}" image="{{asset('uploads')}}/{{$blogs->image}}" blogdescription="{!!$blogs->description!!}" />
     <x-footer/>
   </body>
 </html>

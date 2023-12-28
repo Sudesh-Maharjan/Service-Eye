@@ -18,7 +18,7 @@
                         </div>
                         <div class="bloginside-description">
                             
-                            <p class="m-5">{{$blogdescription}} </p>
+                            <p class="m-5">{!!$blogdescription!!} </p>
                         </div>
                       
                     </div>

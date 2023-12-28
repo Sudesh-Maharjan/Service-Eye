@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
 </head>
-<body class="flex flex-col h-screen bg-gray-100 dark:bg-gray-900 items-center">
+<body class="flex flex-col h-screen bg-gray-100 items-center">
 @include('admin.layout.sidebar')
 
 @if(Session::has('message'))
@@ -17,8 +17,7 @@
 </div>
 @endif
 
-
-<div class="ml-10">
+<div class="">
     <h1 class="text-4xl font-bold m-4">Projects</h1>
     <a href="{{route('project.create')}}"  class="addbutton">Add Projects </a>
     @if(count($teams) > 0)
@@ -46,10 +45,10 @@
                         @endif
                     </td>
                     <td class="tdclass">
-                        <a href="{{route('project.edit',$team->id)}}" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"><span
-                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"><button onclick="openEditModal({{ $team->id }})">Update</button></a>
-                        <a href="{{route('project.delete',$team->id)}}" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"><span
-                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0" onclick="return confirm('Are you sure you want to delete this team?');"><button>Delete</button></a>
+                        <a href="{{route('project.edit',$team->id)}}" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200"><span
+                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0"><button onclick="openEditModal({{ $team->id }})">Update</button></a>
+                        <a href="{{route('project.delete',$team->id)}}" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"><span
+                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0" onclick="return confirm('Are you sure you want to delete this team?');"><button>Delete</button></a>
 
                     </td>
                     

@@ -9,7 +9,6 @@
             <div class="blog-date font-family-Roboto text-sm font-semibold mt-3 mb-6">By Service Eye on {{ $update }}</div>
             <div class="card-body">
                 <h5 class="card-title blog-card-title font-family-Roboto text-xl font-medium px-4">{{ $blogtitle }}</h5>
-                <p class="card-text blog-card-text text-sm truncate-two-lines px-4">{{ $blogdescription }}</p>
             </div>
         </div>
     </div>

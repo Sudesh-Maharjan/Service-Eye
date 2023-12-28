@@ -21,7 +21,7 @@
                 <button type="button" onclick="updateActiveTab('{{ route('project') }}', this, event)" class="category inline-block px-4 py-3  hover:text-blue-900 ">All</button>
                 @foreach ($projectCats as $projectCat)
                     <button type="button" onclick="updateActiveTab('{{ route('project', $projectCat->id) }}', this, event)"
-                            class="category inline-block px-4 py-3 hover:text-blue-900 hover:bg-gray-100 dark:hover:bg-blue-800 dark:hover:text-white">{{ $projectCat->project_cat }}</button>
+                            class="category inline-block px-4 py-3 hover:text-blue-900 hover:bg-gray-100">{{ $projectCat->project_cat }}</button>
                 @endforeach
             </div>
         </header>

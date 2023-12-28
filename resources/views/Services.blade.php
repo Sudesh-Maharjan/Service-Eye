@@ -5,6 +5,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
    @vite('resources/css/app.css')
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="flex flex-col items-center">
    <x-header/>

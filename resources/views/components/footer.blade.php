@@ -13,7 +13,7 @@
     <footer class="relative w-full mt-4 bg-themecolor">
         <div class="box py-12 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="sec aboutus">
-                <img src="{{url('images/logowhitema.png')}}" alt="" width="120px">
+                <img src="{{url('images/header.png')}}" alt="" width="120px">
                 <p id="log" class="text-white mt-4 md:mt-0 md:ml-4">
                     Best and reliable Digital Marketing company with expertise in SEO, Software Development, Web Design
                     / Development, and Mobile application.

@@ -12,7 +12,7 @@
 <body>
    <x-header />
    <x-trainingbanner title="{{$courses->name}}" shortdescription="{{ $courses->short_description }}" description="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN (MongoDB, Express.js, React, Node.js), Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape."/>
-   <div class="mx-auto -mt-28">
+   <div class="mx-auto md:-mt-28">
       <div class="flex flex-wrap justify-center xs:gap-7 md:gap-28 mt-10" data-aos="flip-up" data-aos-duration="1500">
        <x-traininginfocard title="Batch Start Date" date="{!!$courses->Batchstartdate!!}" data-aos-duration="4000" />
        <x-traininginfocard title="Course Duration" date="{!!$courses->courseDuration!!}" data-aos-duration="4000" />
@@ -28,7 +28,7 @@
             <span class="why-join-this-programs-span2 ">?</span>
          </span>
       </div>
-      <div class="flex flex-wrap justify-center gap-40 mt-10" data-aos="flip-up" data-aos-duration="1500">
+      <div class="flex flex-wrap justify-center md:gap-40 mt-10" data-aos="flip-up" data-aos-duration="1500">
       @foreach($courses->programs as $program)
 <x-trainingcard w1="{{$program->title}}" w2="World"
    desc="{{$program->description}}"
@@ -37,7 +37,7 @@
       </div>
    </div>
    <!-- tailwind tabs -->
-   <div class="mt-12 mb-4 border-black text-white mx-36 rounded-t-lg">
+   <div class="mt-12 mb-4 border-black text-white md:mx-36 rounded-t-lg">
    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center bg-gray-200 rounded-md" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
     <li class="me-2 border-2 rounded-t-md" role="presentation">
         <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 text-black hover:text-white font-bold" onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
@@ -51,16 +51,16 @@
 <div id="default-tab-content">
     <div class="hidden p-4 rounded-lg " id="course" role="tabpanel" aria-labelledby="profile-tab">
     <div class="" data-aos="flip-up" data-aos-duration="1000" id="des">
-      <x-description titleone="Description" titletwo='{!!htmlspecialchars_decode($courses->description)!!}'
+      <x-description titleone="Description" titletwo='{!!$courses->description!!}'
          />
    </div>
     </div>
     <div class="hidden px-4 rounded-lg" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="" id=syllabus>
    </div>
-   <div class="flex flex-col items-start m-10 mx-32" data-aos="flip-up" data-aos-duration="2000">
+   <div class="flex flex-col items-start m-10 md:mx-32" data-aos="flip-up" data-aos-duration="2000">
    @foreach($courses->syllabuses as $syllabus)
-   <x-accordion titleaccordion="{!!$syllabus->title!!}" titledescription="{{$syllabus->description}}" />
+   <x-accordion titleaccordion="{!!$syllabus->title!!}" titledescription="{!!$syllabus->description!!}" />
    @endforeach
    </div>
     </div>

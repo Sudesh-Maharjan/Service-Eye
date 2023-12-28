@@ -22,7 +22,7 @@
    <h1 class="text-4xl font-bold m-5">
       Subscribe To Our Newsletter
    </h1>
-   <div class="h-auto flex justify-center items-center m-5">
+   <div class="h-auto flex justify-center items-center m-5 w-auto">
       <input type="text" class="h-[60px] md:w-[150px] lg:w-[600px] border-2 p-3"> <button
          class="bg-blue-950 h-[60px] text-white p-5 z-10 flex justify-center items-center">Subscribe Now</button>
    </div>

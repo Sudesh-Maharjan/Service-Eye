@@ -2,7 +2,7 @@
         <div class=" flex flex-wrap justify-between">
             <div class="w-auto mb-4 ">
                 <div class=" border rounded-md training-card transition-transform transform hover:scale-130 ">
-                    <div class="overflow-hidden object-cover w-[400px] h-[200px] flex justify-center items-center">
+                    <div class="overflow-hidden object-cover  flex justify-center items-center">
                         <img src="{{$image}}"  class="object-cover card-img-top training-card-image" alt="...">
                     </div>
                     <div class="card-body p-3">
