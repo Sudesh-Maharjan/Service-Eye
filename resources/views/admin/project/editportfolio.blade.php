@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Portfolio</title>
@@ -8,9 +7,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
 
-</head>
+@endsection
+@section("content")
 <body class="font-sans bg-gray-100">
-@include('admin.layout.sidebar')
+
 <div id="editProjectPopup" class="max-w-lg mx-auto p-4 bg-white rounded-md shadow-md mt-10">
     <h1 class="text-4xl font-bold">Portfolio</h1>
     <h2 class="text-2xl font-bold my-4">Update Portfolio</h2>
@@ -50,4 +50,4 @@
         </form>
     </div>
 </body>
-</html>
+@endsection

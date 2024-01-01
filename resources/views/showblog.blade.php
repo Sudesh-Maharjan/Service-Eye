@@ -1,15 +1,12 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  @vite('resources/css/app.css')
+@extends("layouts.AdminLayout")
+@section("title")
+@vite('resources/css/app.css')
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blogs</title>
 
-</head>
-@include('admin.layout.sidebar')
-
+@endsection
+@section("content")
 <body class="flex flex-col items-center justify-center bg-gray-100">
   <div class="flex flex-col">
     <div class="ml-72 ">
@@ -54,4 +51,4 @@
     </div>
 </body>
 
-</html>
+@endsection

@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact us </title>
     @vite('resources/css/app.css')
-</head>
-<body>
-@include('admin.layout.sidebar')
+    @endsection
+   @section("content")
+
 
     <div class='flex min-h-screen items-start justify-center mt-20 ml-52'>
         <div class="flex items-center justify-center min-h-auto">
@@ -50,5 +49,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    @endsection

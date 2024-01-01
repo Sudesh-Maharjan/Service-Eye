@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
+@vite('resources/css/app.css')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Project</title>
 <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
 
-    @vite('resources/css/app.css')
 
-</head>
-@include('admin.layout.sidebar')
+@endsection
+@section("content")
 
 <body class="bg-gray-100">
         <form action="{{route('project.store')}}" method="post" enctype="multipart/form-data" class="flex flex-col items-center p-5">
@@ -52,4 +51,4 @@
 
 
 </body>
-</html>
+@endsection

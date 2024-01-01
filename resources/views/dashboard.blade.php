@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
 @vite('resources/css/app.css')
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
+@endsection
 </head>
-<body class="">
-@include('admin.layout.sidebar')
+
+@section("content")
 <h1 class="font-bold text-4xl text-center mt-10 mb-5 ml-56">Welcome To Dashboard</h1>
 <div class="flex flex-col items-center ml-56">
   <div class="grid xs:grid-cols-1 mdl:grid-cols-2 lg:grid-cols-3">
@@ -83,5 +83,4 @@ Courses
 </a>
 </div>
 
-</body>
-</html>
+@endsection

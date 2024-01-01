@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Client</title>
     <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
 @vite('resources/css/app.css')
 
-</head>
-<body>
-@include('admin.layout.sidebar')
+@endsection
+   @section("content")
+
     <form action="{{ route('clients.update', $client->id) }}" method="post" enctype="multipart/form-data" class="flex flex-col justify-center items-center">
         <div class="mt-20">
         <h1 class="font-bold text-4xl mx-5">Our Clients</h1>
@@ -30,5 +29,4 @@
         </div>
         </div>
     </form>
-</body>
-</html>
+    @endsection

@@ -1,8 +1,5 @@
-<!-- resources/views/Teams/showTeams.blade.php -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     @vite('resources/css/app.css')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +14,11 @@
             /* Adjust z-index as needed */
         }
     </style>
-</head>
+   @endsection
+   @section("content")
 
 <body class="flex h-screen bg-gray-100">
-    @include('admin.layout.sidebar')
+
     <div class="flex-1 flex flex-col overflow-hidden">
 
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
@@ -118,4 +116,4 @@
     }
 </script>
 
-</html>
+@endsection

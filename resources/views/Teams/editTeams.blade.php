@@ -1,16 +1,15 @@
-<!-- resources/views/Teams/editTeam.blade.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
 @vite('resources/css/app.css')
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Team</title>
     <script src="https://kit.fontawesome.com/3e146d907a.js" crossorigin="anonymous"></script>
-</head>
+    @endsection
+   @section("content")
 <body class="bg-gray-100">
-@include('admin.layout.sidebar')
+
 
 
 <form action="{{ route('teams.update', ['id' => $team->id]) }}" id="edit-team-form" class="flex flex-col  rounded-lg " method="post" enctype="multipart/form-data">

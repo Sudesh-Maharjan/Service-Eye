@@ -1,4 +1,4 @@
-@extends('layouts.AdminServices')
+@extends("layouts.AdminLayout")
 @section("title")
 @vite('resources/css/app.css')
 
@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-@include('admin.layout.sidebar')
+
 
 <body class="bg-gray-100 flex items-center justify-center">
 

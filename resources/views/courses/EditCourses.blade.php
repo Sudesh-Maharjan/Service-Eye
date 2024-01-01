@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -8,9 +7,8 @@
     <script src="https://cdn.ckeditor.com/4.17.0/standard/ckeditor.js"></script>
 
 
-</head>
-<body>
-@include('admin.layout.sidebar')
+    @endsection
+   @section("content")
 <form action="{{ route('courses.update', $course->id) }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class=""></div>
@@ -188,5 +186,4 @@
     });
 });
     </script>
-</body>
-</html>
+ @endsection

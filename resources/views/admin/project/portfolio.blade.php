@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     @vite('resources/css/app.css')
-</head>
+    @endsection
+    @section("content")
 <body class="flex flex-wrap justify-between mx-20 bg-gray-100">
     
 <div class="w-2/12">
-@include('admin.layout.sidebar')
+
 </div>
 <div class="w-10/12 flex">
     <div class="container mx-auto p-4 flex flex-col justify-end">
@@ -109,4 +109,4 @@
         document.getElementById('addProjectPopup').style.display = 'none';
     }
 </script>
-</html>
+@endsection

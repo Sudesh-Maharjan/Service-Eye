@@ -1,15 +1,14 @@
-<!-- resources/views/Teams/showTeams.blade.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
 @vite('resources/css/app.css')
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-</head>
+    @endsection
+    @section("content")
 <body class="flex flex-col h-screen bg-gray-100 items-center">
-@include('admin.layout.sidebar')
+
 
 @if(Session::has('message'))
 <div class="bg-green-200 text-green-700 p-3 rounded mb-4">
@@ -77,4 +76,4 @@ function closeEditModal() {
         document.getElementById('editProjectModal').classList.add('hidden');
     }
 </script>
-</html>
+@endsection

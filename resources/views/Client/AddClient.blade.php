@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.AdminLayout")
+@section("title")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Client</title>
@@ -8,9 +7,9 @@
 
    @vite('resources/css/app.css')
 
-</head>
-<body>
-@include('admin.layout.sidebar')
+   @endsection
+   @section("content")
+
 <div class="container">
     <form action="{{route('client.store')}}" method="post" enctype="multipart/form-data" class="flex flex-col items-center">
         @csrf
@@ -47,5 +46,4 @@
 
 
 
-</body>
-</html>
+@endsection
