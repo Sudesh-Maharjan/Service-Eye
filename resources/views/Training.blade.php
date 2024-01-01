@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.app")
+@section("title")
+
    @vite('resources/css/app.css')
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
    <title>Training</title>
    <link rel="stylesheet" href="{{ asset('css/trainingcard.css') }}">
-</head>
-<body>
-   <x-header />
+   @endsection
+   @section("content")
+
    <x-trainingbanner title="{{$courses->name}}" shortdescription="{{ $courses->short_description }}" description="Celebrate your journey into the world of technology with our IT training company! We specialize in comprehensive courses covering Java, Full Stack development, MERN (MongoDB, Express.js, React, Node.js), Laravel, and UI/UX design. Our expert instructors guide you through hands-on sessions, equipping you with the skills and knowledge needed to excel in the dynamic IT landscape."/>
    <div class="mx-auto md:-mt-28">
       <div class="flex flex-wrap justify-center xs:gap-7 md:gap-28 mt-10" data-aos="flip-up" data-aos-duration="1500">
@@ -86,7 +86,7 @@
       @endif
    </div>
    </div>
-   <x-footer />
+
    <script>
     document.addEventListener('DOMContentLoaded', function () {
                 AOS.init({
@@ -130,5 +130,4 @@ document.getElementById("course-tab").click();
         }
     }
    </script>
-</body>
-</html>
+@endsection

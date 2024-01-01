@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.app")
+@section("title")
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <title>Projects</title>
     @vite('resources/css/app.css')
-</head>
-<body>
+@endsection
+@section("content")
     <div class="container mx-auto">
-        <x-header />
+
         <header class=" flex flex-col items-center">
             <x-heading heading="Our Projects" />
             <p class=" text-center text-gray-700 mb-8 w-2/3 text-lg font-bold">Software development
@@ -36,7 +36,7 @@
         </div>
     </div>
     @endif
-    <x-footer />
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init();
@@ -63,5 +63,4 @@
             }
         }
     </script>
-</body>
-</html>
+@endsection

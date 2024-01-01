@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <title>Services</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-   @vite('resources/css/app.css')
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+@extends("layouts.app")
+@section("title")
+
+<title>Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+@vite('resources/css/app.css')
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+@endsection
+@section("content")
+
 <body class="flex flex-col items-center">
-   <x-header/>
+
    <!-- service banner start -->
    <div class="grid xs:grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xs:mx-10 md:mx-28 justify-center " data-aos="zoom-out-right" data-aos-duration="1500">
       <div class="w-auto flex justify-center flex-col items-left">
@@ -31,25 +33,22 @@
    @if(count ($services) > 0)
 
    <div class=" grid xs:grid-cols-1 sml:grid-cols-1 mdl:grid-cols-2 lg:grid-cols-3 gap-10 p-4 ">
-   @foreach($services as $service)
-   <x-service heading="{!!$service->title!!}"
-         description="{{$service->description}}"
-         image="{{asset('uploads')}}/{{$service->icon}}" />
-         @endforeach
+      @foreach($services as $service)
+      <x-service heading="{!!$service->title!!}" description="{{$service->description}}" image="{{asset('uploads')}}/{{$service->icon}}" />
+      @endforeach
    </div>
    @endif
    <!-- Our products end -->
-   <x-footer/>
+
    <script>
- document.addEventListener('DOMContentLoaded', function () {
-                AOS.init({
-  disable: function() {
-    var maxWidth = 1200;
-    return window.innerWidth < maxWidth;
-  }
-});
-                // animateNumbers();
-            });
+      document.addEventListener('DOMContentLoaded', function() {
+         AOS.init({
+            disable: function() {
+               var maxWidth = 1200;
+               return window.innerWidth < maxWidth;
+            }
+         });
+         // animateNumbers();
+      });
    </script>
-</body>
-</html>
+   @endsection
