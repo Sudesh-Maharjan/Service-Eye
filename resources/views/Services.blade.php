@@ -28,6 +28,8 @@
       <p class="text-md md:text-xl m-5 font-bold">Service Eye processes are built for speed of iteration and innovation. We use world-class
          product engineering to transform businesses.</p>
    </div>
+   @if(count ($services) > 0)
+
    <div class=" grid xs:grid-cols-1 sml:grid-cols-1 mdl:grid-cols-2 lg:grid-cols-3 gap-10 p-4 ">
    @foreach($services as $service)
    <x-service heading="{!!$service->title!!}"
@@ -35,6 +37,7 @@
          image="{{asset('uploads')}}/{{$service->icon}}" />
          @endforeach
    </div>
+   @endif
    <!-- Our products end -->
    <x-footer/>
    <script>

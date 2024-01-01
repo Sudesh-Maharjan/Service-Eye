@@ -5,14 +5,14 @@
   @vite('resources/css/app.css')
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>Blogs</title>
 
 </head>
 @include('admin.layout.sidebar')
 
 <body class="flex flex-col items-center justify-center bg-gray-100">
   <div class="flex flex-col">
-    <div class="ml-56 ">
+    <div class="ml-72 ">
       <h1 class="text-4xl font-bold text-start m-5">Blogs</h1>
   <a href="{{route('addblog')}}" class="addbutton">Add Blog</a></div>
   @if(Session::has('message'))
@@ -20,13 +20,13 @@
     {{Session::get('message')}}
   </div>
   @endif
-    <table  border="1" cellspacing="0" class=" leading-normal ml-56 bg-white">
+    <table  border="1" cellspacing="0" class=" leading-normal ml-72 bg-white w-[1200px]">
       <thead class=" ">
         <tr>
         <th class="thclass">SN</th>
           <th scope="col" class="thclass">Title</th>
           <th scope="col" class="thclass">Image</th>
-          <th scope="col" class="thclass">Description</th>
+          <th scope="col" class="thclass ">Description</th>
           <th scope="col" class="thclass">Action</th>
 
         </tr>

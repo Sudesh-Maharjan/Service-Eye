@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    @vite('resources/css/app.css')
+@extends("layouts.app")
+@section("title")
+@vite('resources/css/app.css')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/happyusers.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-</head>
-
-<body>
-    <x-header />
+@endsection
+@section("content")
     <x-homebanner />
     <div class="flex justify-center">
         <div class="grid xs:grid-cols-1 md:grid-cols-2 mdl:grid-cols-2 lg:grid-cols-4 container  justify-evenly  mx-auto flex-wrap"
@@ -31,18 +27,16 @@
         <div class="p-2 m-2 flex justify-center w-auto" data-aos="fade-left" data-aos-duration="1500">
             <div class=" w-auto md:w-[430px] p-3 my-2">
                 <h1 class="text-3xl font-bold text-blue-950">Our Services</h1>
-                <h1 class="text-3xl font-bold mt-3"><span class="text-blue-950">IT</span> Services and <br>the <span
+                <h1 class="text-3xl font-bold mt-5"><span class="text-blue-950">IT</span> Services and <br>the <span
                         class="text-blue-950">Future</span></h1>
                 <p class="text-md font-bold mt-5">Our IT Services are designed to adapt the ever-changing digital
                     landscape. We provide decentralized, open-source solutions that are fast, reliable and accessible to
                     everyone. Experience the power of Web3 applications with us.</p>
-                    <a href="{{route('services')}}">
                 <button class="mt-7 shadow-lg  text-white p-3 rounded-lg  bg-blue-950 font-bold hover:bg-blue-800 ">View
                     More
-                    </button></a>
+                    </button>
             </div>
         </div>
-
         <div class="grid xs:grid-cols-1 lg:grid-cols-2 gap-5" data-aos-duration="1500">
             @foreach($services as $service)
             <x-service heading="{!!$service->title!!}" description="{{$service->description}}"
@@ -50,8 +44,7 @@
             @endforeach
         </div>
     </div>
-
-    <div class="md:mx-36 mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
+    <div class="mx-36 mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
         <x-heading heading="Our Projects" />
         <div class="flex flex-wrap justify-center">
             @foreach($portfolio as $p)
@@ -59,9 +52,7 @@
             @endforeach
         </div>
     </div>
-
-
-    <div class="md:mx-36 shadow-xl mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
+    <div class="mx-36 shadow-xl mt-5 rounded-lg" data-aos="flip-left" data-aos-duration="1500">
         <x-getintouch />
     </div>
     <div class="mt-10 mx-36">
@@ -69,7 +60,7 @@
             <x-conecttheapps />
         </div>
     </div>
-    <div class="mt-4 md:mx-36 font-bold text-xl text-center">
+    <div class="mt-4 mx-36 font-bold text-xl text-center">
         <x-heading heading="Our Core Products" />
         <p>"Revolutions your workflow with our cutting edge IT product, seamlessly integrating innovative technology
             <br>
@@ -86,7 +77,7 @@
     </div>
     @if(count ($clients) > 0)
     <x-heading heading="Our Clients" />
-    <p class="text-xl text-center font-bold mb-5 md:mx-36">We take pride in serving a wide range of clients, from small local
+    <p class="text-xl text-center font-bold mb-5 mx-36">We take pride in serving a wide range of clients, from small local
         banks to
         large international financial institutions. </p>
     <div class="grid grid-cols-5 px-20 items-center justify-center mx-36">
@@ -96,9 +87,6 @@
         @endforeach
     </div>
     @endif
-
-    <x-footer class="w-[100%]" />
-</body>
 <script>
     // Initialize AOS
     document.addEventListener('DOMContentLoaded', function () {
@@ -131,5 +119,4 @@
         });
     }
 </script>
-
-</html>
+@endsection

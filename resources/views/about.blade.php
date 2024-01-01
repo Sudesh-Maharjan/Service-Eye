@@ -190,8 +190,8 @@
 
     </div>
     <div class="px-20">
-
-        <x-heading heading="Our Teams" />
+    @if(count ($teams) > 0)
+    <x-heading heading="Our Teams" />
         <div class="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 m-10">
 
             @foreach($teams as $team)
@@ -202,6 +202,7 @@
 
 
         </div>
+        @endif
     </div>
 
 

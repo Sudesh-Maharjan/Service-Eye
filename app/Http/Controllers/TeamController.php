@@ -42,7 +42,7 @@ class TeamController extends Controller
         $validatedData['urls'] = json_encode($validatedData['urls']);
         Teams::create($validatedData);
         session()->flash("message", "team added  Successfully");
-        return redirect()->back()->with('success', 'Record added successfully!');
+        return redirect()->route("teams.show")->with('success', 'Record added successfully!');
     }
     public function edit($id)
     {

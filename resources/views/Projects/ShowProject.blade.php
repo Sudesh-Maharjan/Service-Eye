@@ -18,10 +18,11 @@
 @endif
 
 <div class="">
-    <h1 class="text-4xl font-bold m-4">Projects</h1>
-    <a href="{{route('project.create')}}"  class="addbutton">Add Projects </a>
+    <h1 class="text-4xl font-bold m-4 ml-72">Projects</h1>
+    <div class="ml-64">
+    <a href="{{route('project.create')}}"  class=" addbutton">Add Projects </a></div>
     @if(count($teams) > 0)
-    <table border="1" cellspacing="0"  class="m-5 min-w-full leading-normal">
+    <table border="1" cellspacing="0"  class="ml-64 w-[1200px]">
         <thead>
             <tr>
                 <th scope="col" class="thclass ">Name</th>

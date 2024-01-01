@@ -19,6 +19,7 @@
        <x-traininginfocard title="Number of seats" date="{!!$courses->numberseats!!}" data-aos-duration="4000" />
       </div>
    </div>
+   @if(count ($courses->programs) > 0)
    <div class="mx-auto mt-10">
       <div
          class="text-left ml-20 text-[32px] font-bold leading-[29px] text-[#324465] relative flex items-center justify-start">
@@ -36,15 +37,19 @@
 @endforeach
       </div>
    </div>
+@endif
    <!-- tailwind tabs -->
    <div class="mt-12 mb-4 border-black text-white md:mx-36 rounded-t-lg">
    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center bg-gray-200 rounded-md" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
     <li class="me-2 border-2 rounded-t-md" role="presentation">
         <button class="inline-block p-4 border-b-2 rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 text-black hover:text-white font-bold" onclick="showTab('course')" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="true">Course Overview</button>
     </li>
+   @if(count ($courses->syllabuses) > 0)
+
     <li class="me-2 border-2 rounded-t-md" role="presentation">
         <button class="inline-block p-4 border-b-2 hover:text-white rounded-t-lg focus:outline-none transition duration-300 w-40 hover:bg-gray-700 font-bold text-black" onclick="showTab('syllabus')" id="syllabus-tab" data-tabs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false">Syllabus</button>
     </li>
+    @endif
 </ul>
 
 </div>
@@ -58,14 +63,17 @@
     <div class="hidden px-4 rounded-lg" id="syllabus" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="" id=syllabus>
    </div>
+   @if(count ($courses->syllabuses) > 0)
    <div class="flex flex-col items-start m-10 md:mx-32" data-aos="flip-up" data-aos-duration="2000">
    @foreach($courses->syllabuses as $syllabus)
    <x-accordion titleaccordion="{!!$syllabus->title!!}" titledescription="{!!$syllabus->description!!}" />
    @endforeach
    </div>
+   @endif
     </div>
 </div>
 <div class="flex justify-start">
+   @if(count ($similiarcourse) > 0)
    <x-heading heading="Similar Programs For You" />
    </div>
    <div class="" data-aos="flip-up">
@@ -75,6 +83,7 @@
             image="{{asset('uploads')}}/{{$course->image}}" a="{{route('course.inside',$course->id)}}" />
       @endforeach
       </div>
+      @endif
    </div>
    </div>
    <x-footer />

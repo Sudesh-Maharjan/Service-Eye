@@ -56,7 +56,7 @@
             </div>
             @endif
             @if(count($projects) > 0)
-            <table class="min-w-full text-center bg-white border border-gray-300 rounded-md mt-4">
+            <table class="w-[1200px] text-center bg-white border border-gray-300 rounded-md mt-4">
                 <thead>
                     <tr>
                         <th class="py-2 px-4 border-b">SN</th>

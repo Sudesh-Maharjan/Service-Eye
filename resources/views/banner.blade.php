@@ -33,13 +33,14 @@
                 </div>
             </div>
         </div>
-        
+   @if(count ($blogs) > 0)
         <div class="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
             data-aos-duration="1500">
             @foreach($blogs as $blog)
             <a href="{{route('blog.insideblog',$blog->id)}}"> <x-blogcards blogtitle="{{$blog->title}}" id="{{$blog->id}}" update="{{$blog->updated_at}}" image="{{asset('uploads')}}/{{$blog->image}}" blogdescription="{!!$blog->description!!}"/></a>
             @endforeach
         </div>
+        @endif
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>

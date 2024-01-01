@@ -17,8 +17,10 @@
                 outsourcing is just a tool to
                 achieve business goals. But there is no way to get worthwhile results without cooperation and trust
                 between a client company.</p>
+    @if(count ($projects) > 0)
+
                 <div class="font-bold text-xlflex justify-center items-center mb-8 gap-6 flex-col lg:flex-row border-2 rounded-md border-gray-300">
-                <button type="button" onclick="updateActiveTab('{{ route('project') }}', this, event)" class="category inline-block px-4 py-3  hover:text-blue-900 ">All</button>
+                <button type="button" onclick="updateActiveTab('{{ route('project') }}', this, event)" class="category inline-block px-4 py-3  hover:text-blue-900 active">All</button>
                 @foreach ($projectCats as $projectCat)
                     <button type="button" onclick="updateActiveTab('{{ route('project', $projectCat->id) }}', this, event)"
                             class="category inline-block px-4 py-3 hover:text-blue-900 hover:bg-gray-100">{{ $projectCat->project_cat }}</button>
@@ -33,6 +35,7 @@
             @endforeach
         </div>
     </div>
+    @endif
     <x-footer />
     <script>
         document.addEventListener('DOMContentLoaded', function() {

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\PortfolioController;
 use App\Http\Controllers\admin\ProjectCatController;
+use App\Http\Controllers\admin\UrlController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
@@ -70,7 +71,6 @@ Route::post('/project-cat/store', [ProjectCatController::class, 'store'])->name(
 Route::delete('/project-cat/{projectCat}', [ProjectCatController::class, 'destroy'])->name('project-cat.destroy');
 
 //Blog
-
 Route::get("/addblog",[BlogController::class,"addblog"])->name("addblog");
 Route::post("/storeblog",[BlogController::class,"store"])->name("blog.store");
 Route::get("/showblog",[BlogController::class,"show"])->name("blog.show");
@@ -90,6 +90,12 @@ Route::get("/editaProject/{id}", [PortfolioController::class, 'editaProject'])->
 Route::get("/showcontactus",[ContactController::class,'show_contactus'])->name("showcontactus");
 Route::get("/deleteshowcontactus/{id}",[ContactController::class,'desletecontact'])->name("deleteshowcontactus");
 });
+//URL
+Route::get("/showurl", [UrlController::class, 'showurl'])->name("showurl");
+Route::post("/storeurl", [UrlController::class, 'storeurl'])->name("storeurl");
+Route::get("/editurl/{id}", [UrlController::class, 'editurl'])->name("editurl");
+Route::put("/updateurl/{id}", [UrlController::class, 'updateurl'])->name("updateurl");
+Route::delete("/deleteurl/{id}", [UrlController::class, 'deleteurl'])->name("deleteurl");
 
 require __DIR__.'/auth.php';
 

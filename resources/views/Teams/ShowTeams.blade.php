@@ -40,7 +40,7 @@
             </div>
             @if(count($teams) > 0)
             <table border="1" cellspacing="0"
-                class=" ml-20  min-w-full leading-normal">
+                class=" ml-20 w-[1200px] leading-normal">
                 <thead
                     class=" ">
                     <tr>

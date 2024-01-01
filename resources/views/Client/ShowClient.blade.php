@@ -8,7 +8,7 @@
 </head>
 @include('admin.layout.sidebar')
 <body class="bg-gray-100">
-   <div class='flex flex-col items-end justify-center mr-16'>
+   <div class='flex flex-col items-end justify-center mr-1'>
       <div class="">
       <h1 class="text-4xl font-bold text-start my-3 mx-4">Our Clients</h1>
       <div class="flex items-center justify-center">
@@ -20,7 +20,7 @@
                 @endif
                 <a href="{{route('client.create')}}" class="addbutton">Add Client</a>
                 <div class="overflow-x-auto shadow-md sm:rounded-lg m-5">
-                    <table class=" w-[1100px] text-sm text-left text-gray-500 ">
+                    <table class=" w-[1200px] text-sm text-left text-gray-500 ">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                             <tr>
                             <th scope="col" class="py-3 px-6">Sn</th>
