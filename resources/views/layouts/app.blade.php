@@ -25,13 +25,13 @@
                     <div class="Rectangle72 w-14 h-1 left-0 top-0 absolute bg-white rounded-sm"></div>
                 </div>
                 <ul id="myList1">
-                    <li><a href="#" class="text-white">Home</a></li>
-                    <li><a href="#" class="text-white">About</a></li>
-                    <li><a href="#" class="text-white">Team</a></li>
-                    <li><a href="#" class="text-white">Career</a></li>
-                    <li><a href="#" class="text-white">Contact</a></li>
-                    <li><a href="#" class="text-white">Privacy</a></li>
-                    <li><a href="#" class="text-white">Policy</a></li>
+                    <li><a href="/" class="text-white">Home</a></li>
+                    <li><a href="/about" class="text-white">About</a></li>
+                    <li><a href="/about" class="text-white">Team</a></li>
+                    <!-- <li><a href="/" class="text-white">Career</a></li> -->
+                    <li><a href="/contactus" class="text-white">Contact</a></li>
+                    <!-- <li><a href="/" class="text-white">Privacy</a></li>
+                    <li><a href="#" class="text-white">Policy</a></li> -->
                 </ul>
             </div>
             <div class="sec quicklinks">
@@ -42,7 +42,7 @@
                 </div>
                 <ul id="myList2">
                     @foreach($services as $service)
-                    <li><a href="/" class="text-white">{{$service->title}}</a></li>
+                    <li><a href="/services" class="text-white">{{$service->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
